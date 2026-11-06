@@ -1897,9 +1897,18 @@ img {
   to { transform: translateY(0); opacity: 1; }
 }
 
-@media (max-width: 991px) {
-  .mobile-floating-cart-bar.visible {
-    display: flex;
+.mobile-floating-cart-bar.visible {
+  display: flex;
+}
+
+@media (min-width: 992px) {
+  .mobile-floating-cart-bar {
+    left: auto;
+    right: 28px;
+    bottom: 24px;
+    width: auto;
+    min-width: 340px;
+    max-width: 420px;
   }
 }
 

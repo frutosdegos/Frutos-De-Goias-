@@ -7,20 +7,20 @@
 const STORE_UNITS = {
   'santa-luzia': {
     id: 'santa-luzia',
-    name: 'Santa Luzia (Av. Brasília)',
-    address: 'Av. Brasília, 1420 - Centro Comercial, Santa Luzia - MG',
-    whatsappNumber: '5531987654321', // Número com DDI e DDD
-    displayPhone: '(31) 98765-4321',
+    name: 'Santa Luzia',
+    address: 'R. Jaime Carlos Afonso Teixeira, 66 - Bela Vista, Santa Luzia - MG, 33010-515',
+    whatsappNumber: '5531995809341', // Número com DDI e DDD
+    displayPhone: '(31) 99580-9341',
     deliveryFee: 5.00,
     minOrder: 15.00,
-    hours: '12:00 às 22:30'
+    hours: 'Aberto · Fecha às 21:00'
   },
   'sao-benedito': {
     id: 'sao-benedito',
-    name: 'São Benedito (R. dos Comerciários)',
-    address: 'Rua dos Comerciários, 310 - São Benedito, Santa Luzia - MG',
-    whatsappNumber: '5531987654322',
-    displayPhone: '(31) 98765-4322',
+    name: 'São Benedito',
+    address: 'Av. Brasília, 1858 - São Benedito, Santa Luzia - MG, 33105-515',
+    whatsappNumber: '5531999555848',
+    displayPhone: '(31) 99955-5848',
     deliveryFee: 5.00,
     minOrder: 15.00,
     hours: '12:00 às 23:00'
