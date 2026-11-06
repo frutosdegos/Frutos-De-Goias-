@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Frutos de Goiás | Sorveteria & Açaíteria - Santa Luzia e São Benedito</title>
+  <meta name="description" content="Peça online o melhor açaí, sorvetes artesanais e sabores autênticos do Cerrado em Santa Luzia e São Benedito. Barcas de açaí, Grand Shake, Petit Gateau e potes para viagem.">
+  <meta name="keywords" content="frutos de goias, acai santa luzia, sorvete sao benedito, picole do cerrado, petit gateau, grand shake, barca de acai">
+  <meta name="theme-color" content="#1e5631">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Frutos de Goiás - Santa Luzia & São Benedito">
+  <meta property="og:description" content="O autêntico sabor do Cerrado e o melhor Açaí da região. Peça agora pelo cardápio digital!">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement & Unit Selector Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span class="status-indicator-dot"></span>
+        <span class="top-bar-text"><strong>Aberto Agora!</strong> Entregas rápidas em Santa Luzia e São Benedito</span>
+      </div>
+      <div class="top-bar-right">
+        <div class="unit-selector-wrapper">
+          <label for="store-unit-select" class="unit-label">
+            <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Unidade:</span>
+          </label>
+          <select id="store-unit-select" class="unit-select" onchange="changeStoreUnit(this.value)">
+            <option value="santa-luzia">Santa Luzia (Av. Brasília)</option>
+            <option value="sao-benedito">São Benedito (R. Comerciários)</option>
+          </select>
+        </div>
+        <a href="https://instagram.com/frutosdegoiassantaluzia" target="_blank" rel="noopener" class="top-social-link" title="Siga no Instagram">
+          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>@frutosdegoiassantaluzia</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header / Navigation -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="Frutos de Goiás Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 44 44" class="logo-svg">
+            <defs>
+              <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#40916c" />
+                <stop offset="100%" stop-color="#1e5631" />
+              </linearGradient>
+              <linearGradient id="fruitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f59e0b" />
+                <stop offset="100%" stop-color="#d97706" />
+              </linearGradient>
+            </defs>
+            <circle cx="22" cy="22" r="21" fill="#fdfbf7" stroke="#e6dfd3" stroke-width="1.5"/>
+            <!-- Organic cerrado leaves & fruit illustration -->
+            <path d="M22 8 C14 8 10 16 12 24 C14 30 22 36 22 36 C22 36 30 30 32 24 C34 16 30 8 22 8 Z" fill="url(#leafGrad)"/>
+            <circle cx="22" cy="22" r="7.5" fill="url(#fruitGrad)"/>
+            <path d="M22 13 C23 16 26 19 28 20" stroke="#fef3c7" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">FRUTOS DE GOIÁS</span>
+          <span class="brand-tagline">Santa Luzia & São Benedito • Sabores do Cerrado</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav">
+        <a href="#destaques" class="nav-link">Mais Vendidos</a>
+        <a href="#cerrado" class="nav-link nav-highlight">Sabores do Cerrado 🌿</a>
+        <a href="#cardapio" class="nav-link">Cardápio Digital</a>
+        <a href="#avaliacoes" class="nav-link">Avaliações</a>
+        <a href="#unidades" class="nav-link">Nossas Unidades</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Search Trigger / Quick Search -->
+        <button class="icon-btn search-toggle-btn" onclick="focusSearchInput()" aria-label="Buscar no cardápio" title="Buscar no cardápio">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="cart-trigger-btn" onclick="openCartDrawer()" aria-label="Abrir carrinho de compras">
+          <div class="cart-icon-wrap">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-badge" id="cartCountBadge">0</span>
+          </div>
+          <span class="cart-total-text" id="cartTotalHeader">R$ 0,00</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" onclick="toggleMobileNav()" aria-label="Abrir menu de navegação">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide Nav -->
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <div class="mobile-nav-links">
+        <a href="#destaques" onclick="closeMobileNav()">⭐ Mais Vendidos</a>
+        <a href="#cerrado" onclick="closeMobileNav()">🌿 Sabores Autênticos do Cerrado</a>
+        <a href="#cardapio" onclick="closeMobileNav()">📖 Cardápio Completo</a>
+        <a href="#avaliacoes" onclick="closeMobileNav()">💬 O Que Dizem Nossos Clientes</a>
+        <a href="#unidades" onclick="closeMobileNav()">📍 Unidades & Horários</a>
+        <a href="https://instagram.com/frutosdegoiassantaluzia" target="_blank" rel="noopener" class="mobile-insta-btn">
+          Seguir no Instagram @frutosdegoiassantaluzia
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape-blob shape-1"></div>
+      <div class="shape-blob shape-2"></div>
+      <div class="shape-leaf shape-leaf-1"></div>
+      <div class="shape-leaf shape-leaf-2"></div>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-icon">🌿</span>
+          <span>Tradição, Frutas Nobres & O Melhor Açaí</span>
+        </div>
+        <h1 class="hero-title">
+          O sabor autêntico do <span class="highlight-orange">Cerrado</span> e o açaí mais cremoso da região!
+        </h1>
+        <p class="hero-description">
+          Experimente nossas barcas e taças de açaí montadas na hora, taças gourmet irresistíveis como <strong>Grand Shake</strong> e <strong>Sorvete Assado</strong>, além de mais de 60 sabores artesanais com frutas do Brasil.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#cardapio" class="btn btn-primary btn-lg shadow-pulse">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <span>Ver Cardápio & Pedir</span>
+          </a>
+          <a href="#cerrado" class="btn btn-secondary btn-lg">
+            <span>Conhecer Frutas do Cerrado</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="hero-features-strip">
+          <div class="hero-feature-item">
+            <div class="feature-icon-circle">⚡</div>
+            <div>
+              <strong>Entrega Expressa</strong>
+              <small>Santa Luzia e Região</small>
+            </div>
+          </div>
+          <div class="hero-feature-item">
+            <div class="feature-icon-circle">🍨</div>
+            <div>
+              <strong>+60 Sabores</strong>
+              <small>Sorvetes e Picolés</small>
+            </div>
+          </div>
+          <div class="hero-feature-item">
+            <div class="feature-icon-circle">⭐</div>
+            <div>
+              <strong>Nota 4.9</strong>
+              <small>Mais de 3.500 pedidos</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card-composition">
+          <!-- Featured Floating Card 1 -->
+          <div class="floating-hero-card card-acai">
+            <div class="floating-badge">🔥 Mais Pedido</div>
+            <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80" alt="Barca de Açaí Frutos de Goiás" class="floating-hero-img" loading="eager" onerror="handleImageFallback(this, 'Barca de Açaí')">
+            <div class="floating-card-body">
+              <h4>Barca de Açaí Especial</h4>
+              <p>Morangos, Ninho, Nutella e Paçoca</p>
+              <div class="floating-card-footer">
+                <span class="price-tag">A partir de R$ 34,90</span>
+                <button class="mini-order-btn" onclick="openProductCustomizer('acai-barca')" aria-label="Montar Barca de Açaí">Montar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Mini Card -->
+          <div class="floating-hero-pill pill-cerrado">
+            <span class="pill-emoji">🍃</span>
+            <div>
+              <strong>Frutos de Goiás</strong>
+              <small>Pequi • Baru • Mangaba • Cajá</small>
+            </div>
+          </div>
+
+          <!-- Secondary Mini Card 2 -->
+          <div class="floating-hero-pill pill-delivery">
+            <span class="pill-emoji">🛵</span>
+            <div>
+              <strong>Pronto para entrega</strong>
+              <small>Chega geladinho e intacto!</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Organic Wave Divider -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
+        <path d="M0,32L60,42.7C120,53,240,75,360,69.3C480,64,600,32,720,26.7C840,21,960,43,1080,53.3C1200,64,1320,64,1380,64L1440,64L1440,90L1380,90C1320,90,1200,90,1080,90C960,90,840,90,720,90C600,90,480,90,360,90C240,90,120,90,60,90L0,90Z" fill="#ffffff"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Quick Units Bar Notification Banner -->
+  <section class="units-quick-banner">
+    <div class="container">
+      <div class="units-quick-grid">
+        <div class="unit-quick-card active" id="unitCardSantaLuzia">
+          <div class="unit-quick-icon">📍</div>
+          <div class="unit-quick-info">
+            <span class="unit-badge">Unidade 1</span>
+            <h3>Santa Luzia (Centro Comercial)</h3>
+            <p>Av. Brasília, 1420 • Aberto hoje até 22:30</p>
+          </div>
+          <button class="unit-select-btn" onclick="changeStoreUnit('santa-luzia')">Selecionada</button>
+        </div>
+
+        <div class="unit-quick-card" id="unitCardSaoBenedito">
+          <div class="unit-quick-icon">📍</div>
+          <div class="unit-quick-info">
+            <span class="unit-badge">Unidade 2</span>
+            <h3>São Benedito (Região Central)</h3>
+            <p>Rua dos Comerciários, 310 • Aberto hoje até 23:00</p>
+          </div>
+          <button class="unit-select-btn" onclick="changeStoreUnit('sao-benedito')">Selecionar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destaques Mais Vendidos -->
+  <section class="section section-destaques" id="destaques">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Os Favoritos de Santa Luzia & São Benedito</span>
+        <h2 class="section-title">Campeões de Pedidos</h2>
+        <p class="section-subtitle">Aquelas delícias que nossos clientes pedem de olhos fechados!</p>
+      </div>
+
+      <div class="destaques-grid">
+        <!-- Card 1: Barca de Açaí -->
+        <div class="product-card card-destaque" data-product-id="acai-barca">
+          <div class="product-card-badge ribbon-hot">⭐ O Mais Pedido</div>
+          <div class="product-image-wrap">
+            <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80" alt="Barca de Açaí Completa" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Barca de Açaí')">
+          </div>
+          <div class="product-content">
+            <span class="product-category-tag">Açaí Especial</span>
+            <h3 class="product-title">Barca de Açaí Frutos de Goiás</h3>
+            <p class="product-desc">Barca recheada com açaí artesanal cremoso, fatias de morango fresco, banana, leite Ninho, Nutella e paçoca crocante.</p>
+            <div class="product-meta">
+              <span class="product-portion">Opções: 500ml, 700ml e Barca G</span>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-price">
+                <small>A partir de</small>
+                <strong>R$ 34,90</strong>
+              </div>
+              <button class="btn btn-primary btn-sm btn-pedir" onclick="openProductCustomizer('acai-barca')">
+                <span>Personalizar</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Grand Shake Trufado -->
+        <div class="product-card card-destaque" data-product-id="grand-shake">
+          <div class="product-card-badge ribbon-luxo">👑 Sucesso Absoluto</div>
+          <div class="product-image-wrap">
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80" alt="Grand Shake Trufado" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Grand Shake Trufado')">
+          </div>
+          <div class="product-content">
+            <span class="product-category-tag">Sobremesa na Taça</span>
+            <h3 class="product-title">Grand Shake Trufado Especial</h3>
+            <p class="product-desc">Taça gigante lambuzada com ganache de chocolate meio amargo, batido com sorvete artesanal, chantilly e picolé gourmet mergulhado.</p>
+            <div class="product-meta">
+              <span class="product-portion">Servido em taça de 550ml</span>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-price">
+                <small>Valor</small>
+                <strong>R$ 29,90</strong>
+              </div>
+              <button class="btn btn-primary btn-sm btn-pedir" onclick="openProductCustomizer('grand-shake')">
+                <span>Personalizar</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Petit Gateau Supremo -->
+        <div class="product-card card-destaque" data-product-id="petit-gateau">
+          <div class="product-card-badge ribbon-warm">🍫 Quente & Frio</div>
+          <div class="product-image-wrap">
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Petit Gateau com Sorvete Artesanal" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Petit Gateau Supremo')">
+          </div>
+          <div class="product-content">
+            <span class="product-category-tag">Sobremesa Clássica</span>
+            <h3 class="product-title">Petit Gateau Supremo</h3>
+            <p class="product-desc">Bolo vulcão quente de chocolate com recheio cremoso e derretido, acompanhado de bola de sorvete artesanal de baunilha ou creme de baru.</p>
+            <div class="product-meta">
+              <span class="product-portion">Acompanha calda quente</span>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-price">
+                <small>Valor</small>
+                <strong>R$ 25,90</strong>
+              </div>
+              <button class="btn btn-primary btn-sm btn-pedir" onclick="openProductCustomizer('petit-gateau')">
+                <span>Personalizar</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Sorvete Assado -->
+        <div class="product-card card-destaque" data-product-id="sorvete-assado">
+          <div class="product-card-badge ribbon-gold">✨ Exclusividade</div>
+          <div class="product-image-wrap">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Sorvete Assado Tradicional" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Sorvete Assado Tradicional')">
+          </div>
+          <div class="product-content">
+            <span class="product-category-tag">Sobremesa Especial</span>
+            <h3 class="product-title">Sorvete Assado Tradicional</h3>
+            <p class="product-desc">Base fofinha de bolo artesanal, generosa porção de sorvete e coberto com merengue suíço maçaricado e gratinado na hora.</p>
+            <div class="product-meta">
+              <span class="product-portion">Experiência única e inesquecível</span>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-price">
+                <small>Valor</small>
+                <strong>R$ 27,90</strong>
+              </div>
+              <button class="btn btn-primary btn-sm btn-pedir" onclick="openProductCustomizer('sorvete-assado')">
+                <span>Personalizar</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sabores Autênticos do Cerrado Section -->
+  <section class="section section-cerrado" id="cerrado">
+    <div class="cerrado-pattern-bg"></div>
+    <div class="container relative-content">
+      <div class="cerrado-banner-box">
+        <div class="cerrado-banner-text">
+          <span class="cerrado-pill">🌿 O Verdadeiro DNA da Frutos de Goiás</span>
+          <h2 class="cerrado-title">Frutos Típicos do Cerrado Brasileiro</h2>
+          <p class="cerrado-p">
+            Você sabia que nossos sorvetes e picolés preservam a polpa pura e o sabor genuíno de espécies raras e ricas da flora do Cerrado? Cada colherada é uma viagem às origens do nosso Brasil!
+          </p>
+          <div class="cerrado-fruits-list">
+            <div class="cerrado-fruit-chip" onclick="filterMenuByCerrado('pequi')">
+              <span class="fruit-emoji">🌰</span>
+              <div>
+                <strong>Pequi</strong>
+                <small>Aveludado e icônico</small>
+              </div>
+            </div>
+            <div class="cerrado-fruit-chip" onclick="filterMenuByCerrado('baru')">
+              <span class="fruit-emoji">🥜</span>
+              <div>
+                <strong>Castanha de Baru</strong>
+                <small>Nobre & crocante</small>
+              </div>
+            </div>
+            <div class="cerrado-fruit-chip" onclick="filterMenuByCerrado('mangaba')">
+              <span class="fruit-emoji">🍈</span>
+              <div>
+                <strong>Mangaba</strong>
+                <small>Aroma floral e doce</small>
+              </div>
+            </div>
+            <div class="cerrado-fruit-chip" onclick="filterMenuByCerrado('caja')">
+              <span class="fruit-emoji">🥭</span>
+              <div>
+                <strong>Cajá</strong>
+                <small>Acidez refrescante</small>
+              </div>
+            </div>
+            <div class="cerrado-fruit-chip" onclick="filterMenuByCerrado('buriti')">
+              <span class="fruit-emoji">🌴</span>
+              <div>
+                <strong>Buriti</strong>
+                <small>Cor e sabor marcante</small>
+              </div>
+            </div>
+            <div class="cerrado-fruit-chip" onclick="filterMenuByCerrado('cupuacu')">
+              <span class="fruit-emoji">🥥</span>
+              <div>
+                <strong>Cupuaçu</strong>
+                <small>Cremosidade pura</small>
+              </div>
+            </div>
+          </div>
+          <div class="cerrado-action">
+            <a href="#cardapio" class="btn btn-amber btn-md" onclick="selectCategory('potes-cerrado')">
+              Ver Todos os Potes e Picolés do Cerrado
+            </a>
+          </div>
+        </div>
+        <div class="cerrado-banner-image">
+          <div class="cerrado-image-card">
+            <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=700&q=80" alt="Sorvetes Artesanais Frutos de Goiás" class="cerrado-card-img" onerror="handleImageFallback(this, 'Frutos do Cerrado')">
+            <div class="cerrado-badge-floating">
+              <strong>100% Polpa Selecionada</strong>
+              <span>Zero conservantes desnecessários</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cardápio Digital Interativo -->
+  <section class="section section-menu" id="cardapio">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Faça seu Pedido Online</span>
+        <h2 class="section-title">Cardápio Digital Completo</h2>
+        <p class="section-subtitle">Escolha sua categoria, personalize os adicionais e receba quentinho ou geladinho em casa!</p>
+      </div>
+
+      <!-- Search and Filter Controls -->
+      <div class="menu-controls-wrapper">
+        <div class="menu-search-bar">
+          <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="menuSearchInput" placeholder="Buscar por açaí, petit gateau, baru, pequi, milk shake..." oninput="handleMenuSearch(this.value)">
+          <button id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()" style="display:none;" title="Limpar busca">✕</button>
+        </div>
+
+        <div class="tag-filters">
+          <button class="filter-pill active" onclick="filterByTag('all', this)">Todos</button>
+          <button class="filter-pill" onclick="filterByTag('destaques', this)">⭐ Mais Pedidos</button>
+          <button class="filter-pill" onclick="filterByTag('cerrado', this)">🌿 Frutos do Cerrado</button>
+          <button class="filter-pill" onclick="filterByTag('fit', this)">🌱 Opção Fit / Zero Açúcar</button>
+          <button class="filter-pill" onclick="filterByTag('sobremesas', this)">🍮 Sobremesas Quentes</button>
+        </div>
+      </div>
+
+      <!-- Sticky Category Tab Bar -->
+      <div class="sticky-category-nav-wrapper" id="categoryNav">
+        <div class="category-tabs-container">
+          <button class="category-tab active" data-cat="all" onclick="selectCategory('all')">
+            <span class="cat-icon">✨</span>
+            <span class="cat-name">Ver Tudo</span>
+          </button>
+          <button class="category-tab" data-cat="acai" onclick="selectCategory('acai')">
+            <span class="cat-icon">🍧</span>
+            <span class="cat-name">Açaí & Barcas</span>
+          </button>
+          <button class="category-tab" data-cat="sobremesas" onclick="selectCategory('sobremesas')">
+            <span class="cat-icon">🍨</span>
+            <span class="cat-name">Sobremesas Especiais</span>
+          </button>
+          <button class="category-tab" data-cat="shakes" onclick="selectCategory('shakes')">
+            <span class="cat-icon">🥤</span>
+            <span class="cat-name">Milk Shakes & Vitaminas</span>
+          </button>
+          <button class="category-tab" data-cat="potes-cerrado" onclick="selectCategory('potes-cerrado')">
+            <span class="cat-icon">🍦</span>
+            <span class="cat-name">Potes para Viagem</span>
+          </button>
+          <button class="category-tab" data-cat="picoles" onclick="selectCategory('picoles')">
+            <span class="cat-icon">🍡</span>
+            <span class="cat-name">Picolés Artesanais</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Items Display Grid -->
+      <div class="menu-products-container" id="menuProductsContainer">
+        <!-- Rendered by app.js dynamically -->
+      </div>
+
+      <!-- Empty Search State -->
+      <div class="empty-search-state" id="emptySearchState" style="display:none;">
+        <div class="empty-icon">🔍</div>
+        <h3>Nenhum produto encontrado</h3>
+        <p>Não encontramos nenhum item com o termo pesquisado. Tente buscar por palavras como "açaí", "sorvete", "baru" ou "morango".</p>
+        <button class="btn btn-secondary btn-sm" onclick="clearSearch()">Limpar Busca</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiência do Cliente / Avaliações -->
+  <section class="section section-reviews" id="avaliacoes">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Clientes Apaixonados</span>
+        <h2 class="section-title">O que dizem sobre nós</h2>
+        <p class="section-subtitle">Avaliações reais de clientes atendidos nas lojas de Santa Luzia e São Benedito.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"O melhor açaí de Santa Luzia disparado! A barca vem super caprichada, com frutas novinhas e a consistência do açaí é perfeita, nada daquele gelo puro. Recomendo de olhos fechados!"</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">ML</div>
+            <div>
+              <strong>Mariana Luiza</strong>
+              <small>Cliente Santa Luzia • Pedido via Delivery</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"O sorvete de Castanha de Baru e o de Mangaba são surreal de gostosos! Moro perto da unidade São Benedito e virou ponto de parada obrigatório todo fim de semana com a família."</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">RO</div>
+            <div>
+              <strong>Rodrigo Oliveira</strong>
+              <small>Cliente São Benedito • Retirada no balcão</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Pedi o Grand Shake Trufado e o Petit Gateau. Chegou super rápido no delivery, o petit gateau veio quentinho na embalagem térmica e o sorvete totalmente intacto. Atendimento nota 10!"</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">CF</div>
+            <div>
+              <strong>Camila Ferreira</strong>
+              <small>Cliente Santa Luzia • Pedido via WhatsApp</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unidades & Informações -->
+  <section class="section section-unidades" id="unidades">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Visite ou Peça</span>
+        <h2 class="section-title">Nossas Unidades em Santa Luzia</h2>
+        <p class="section-subtitle">Venha saborear um momento especial com a gente ou solicite sua entrega rápida.</p>
+      </div>
+
+      <div class="unidades-grid">
+        <!-- Unidade 1: Santa Luzia -->
+        <div class="unidade-card">
+          <div class="unidade-header">
+            <div>
+              <span class="unidade-tag">Unidade 01</span>
+              <h3 class="unidade-nome">Santa Luzia Centro</h3>
+            </div>
+            <span class="status-open-pill">Aberto Agora</span>
+          </div>
+
+          <div class="unidade-body">
+            <div class="unidade-info-row">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <strong>Endereço:</strong>
+                <p>Av. Brasília, 1420 - Centro Comercial, Santa Luzia - MG</p>
+              </div>
+            </div>
+
+            <div class="unidade-info-row">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div>
+                <strong>Horário de Funcionamento:</strong>
+                <p>Segunda a Domingo: 12:00 às 22:30</p>
+              </div>
+            </div>
+
+            <div class="unidade-info-row">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div>
+                <strong>WhatsApp / Pedidos:</strong>
+                <p>(31) 98765-4321</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="unidade-actions">
+            <button class="btn btn-primary btn-block" onclick="selectUnitAndGoToMenu('santa-luzia')">Pedir Nesta Unidade</button>
+            <a href="https://maps.google.com/?q=Av.+Brasilia+1420+Santa+Luzia+MG" target="_blank" rel="noopener" class="btn btn-outline btn-block">Ver Rota no Google Maps</a>
+          </div>
+        </div>
+
+        <!-- Unidade 2: São Benedito -->
+        <div class="unidade-card">
+          <div class="unidade-header">
+            <div>
+              <span class="unidade-tag">Unidade 02</span>
+              <h3 class="unidade-nome">São Benedito</h3>
+            </div>
+            <span class="status-open-pill">Aberto Agora</span>
+          </div>
+
+          <div class="unidade-body">
+            <div class="unidade-info-row">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <strong>Endereço:</strong>
+                <p>Rua dos Comerciários, 310 - São Benedito, Santa Luzia - MG</p>
+              </div>
+            </div>
+
+            <div class="unidade-info-row">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div>
+                <strong>Horário de Funcionamento:</strong>
+                <p>Segunda a Domingo: 12:00 às 23:00</p>
+              </div>
+            </div>
+
+            <div class="unidade-info-row">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div>
+                <strong>WhatsApp / Pedidos:</strong>
+                <p>(31) 98765-4322</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="unidade-actions">
+            <button class="btn btn-primary btn-block" onclick="selectUnitAndGoToMenu('sao-benedito')">Pedir Nesta Unidade</button>
+            <a href="https://maps.google.com/?q=Rua+dos+Comerciarios+310+Sao+Benedito+Santa+Luzia+MG" target="_blank" rel="noopener" class="btn btn-outline btn-block">Ver Rota no Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <span class="logo-circle">🍃</span>
+          <span class="footer-brand-title">FRUTOS DE GOIÁS</span>
+        </div>
+        <p class="footer-bio">
+          Tradição goiana no coração de Minas Gerais. O melhor açaí, sobremesas exclusivas e os autênticos sabores do cerrado em Santa Luzia e São Benedito.
+        </p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/frutosdegoiassantaluzia" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="javascript:void(0)" onclick="openWhatsAppDirect()" class="social-icon-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Cardápio Rápido</h4>
+        <ul class="footer-links">
+          <li><a href="javascript:void(0)" onclick="selectCategory('acai')">Açaí na Taça & Barcas</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('sobremesas')">Grand Shake & Sobremesas</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('shakes')">Milk Shakes & Vitaminas</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('potes-cerrado')">Potes do Cerrado (Pequi, Baru...)</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('picoles')">Picolés Artesanais</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Nossas Unidades</h4>
+        <div class="footer-unidade-item">
+          <strong>Santa Luzia</strong>
+          <p>Av. Brasília, 1420 - Centro Comercial</p>
+          <small>Tel / WhatsApp: (31) 98765-4321</small>
+        </div>
+        <div class="footer-unidade-item">
+          <strong>São Benedito</strong>
+          <p>Rua dos Comerciários, 310</p>
+          <small>Tel / WhatsApp: (31) 98765-4322</small>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Horário de Atendimento</h4>
+        <p class="footer-hours">
+          Segunda a Domingo<br>
+          <strong>12:00 às 22:30</strong> (Santa Luzia)<br>
+          <strong>12:00 às 23:00</strong> (São Benedito)
+        </p>
+        <div class="payment-methods-strip">
+          <span>Formas de Pagamento:</span>
+          <div class="payment-badges">
+            <span class="pay-chip">PIX</span>
+            <span class="pay-chip">Crédito</span>
+            <span class="pay-chip">Débito</span>
+            <span class="pay-chip">Dinheiro</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Frutos de Goiás - Unidades Santa Luzia e São Benedito. Todos os direitos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="javascript:void(0)" onclick="openModal('modalPrivacidade')">Política de Privacidade</a>
+          <span>•</span>
+          <a href="javascript:void(0)" onclick="openModal('modalTermos')">Termos de Pedido</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile Cart Bar (Sticky Bottom Bar) -->
+  <div class="mobile-floating-cart-bar" id="mobileCartBar" onclick="openCartDrawer()">
+    <div class="floating-cart-left">
+      <div class="floating-cart-badge-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span id="mobileCartCount">0</span>
+      </div>
+      <div class="floating-cart-text">
+        <span class="floating-cart-label">Ver Pedido</span>
+        <span class="floating-cart-price" id="mobileCartTotal">R$ 0,00</span>
+      </div>
+    </div>
+    <div class="floating-cart-right">
+      <span>Finalizar Pedido</span>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </div>
+  </div>
+
+  <!-- Cart Drawer (Offcanvas Sidebar) -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de Compras">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title-wrap">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <h3>Seu Pedido</h3>
+        <span class="cart-items-qty" id="cartItemsCountLabel">(0 itens)</span>
+      </div>
+      <button class="cart-close-btn" onclick="closeCartDrawer()" aria-label="Fechar carrinho">✕</button>
+    </div>
+
+    <!-- Active Store Banner inside Drawer -->
+    <div class="cart-unit-indicator">
+      <span>Unidade selecionada:</span>
+      <strong id="cartUnitName">Santa Luzia (Av. Brasília)</strong>
+      <button class="cart-change-unit-link" onclick="toggleCartUnitSwitch()">Alterar</button>
+    </div>
+
+    <!-- Scrollable Items List -->
+    <div class="cart-drawer-body" id="cartItemsContainer">
+      <!-- Items dynamically injected here -->
+      <div class="cart-empty-message" id="cartEmptyMessage">
+        <div class="empty-cart-illu">🍧</div>
+        <h4>Seu carrinho está vazio</h4>
+        <p>Explore nosso cardápio delicioso e adicione suas sobremesas favoritas para começar o pedido!</p>
+        <button class="btn btn-primary btn-sm" onclick="closeCartDrawer(); window.location.href='#cardapio'">Ver Cardápio</button>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout Trigger -->
+    <div class="cart-drawer-footer" id="cartFooterSection" style="display:none;">
+      <div class="cart-summary-lines">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="cartSubtotalValue">R$ 0,00</span>
+        </div>
+        <div class="summary-line">
+          <span>Entrega estimada</span>
+          <span id="cartDeliveryFeeValue">R$ 5,00</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>Total Geral</span>
+          <strong id="cartGrandTotalValue">R$ 0,00</strong>
+        </div>
+      </div>
+
+      <div class="cart-actions-group">
+        <button class="btn btn-primary btn-block btn-lg" onclick="openCheckoutModal()">
+          <span>Continuar para Checkout</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <button class="btn btn-ghost btn-sm btn-block text-muted" onclick="clearCart()">
+          Esvaziar Carrinho
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Product Customizer Modal (Montador de Produto) -->
+  <div class="modal-overlay" id="customizerModalOverlay">
+    <div class="modal-card customizer-modal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" onclick="closeProductCustomizer()" aria-label="Fechar">✕</button>
+
+      <div class="customizer-header" id="customizerHeader">
+        <div class="customizer-img-wrap">
+          <img src="" id="customizerImg" alt="Imagem do produto" class="customizer-img">
+        </div>
+        <div class="customizer-title-area">
+          <span class="customizer-cat-tag" id="customizerCategory">Açaí Especial</span>
+          <h2 class="customizer-name" id="customizerTitle">Nome do Produto</h2>
+          <p class="customizer-description" id="customizerDesc">Descrição completa do item.</p>
+          <div class="customizer-base-price">
+            <span class="price-currency">R$</span>
+            <span class="price-val" id="customizerBasePrice">0,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="customizer-body" id="customizerOptionsBody">
+        <!-- Dynamically filled: Tamanhos, Complementos Inclusos, Adicionais Pagos, Coberturas, Observações -->
+      </div>
+
+      <div class="customizer-footer">
+        <div class="customizer-qty-selector">
+          <button class="qty-btn" onclick="adjustCustomizerQty(-1)" aria-label="Diminuir quantidade">−</button>
+          <span class="qty-number" id="customizerQty">1</span>
+          <button class="qty-btn" onclick="adjustCustomizerQty(1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+
+        <button class="btn btn-primary btn-lg customizer-add-btn" onclick="addCustomizedProductToCart()">
+          <span>Adicionar ao Pedido</span>
+          <span class="customizer-total-preview" id="customizerTotalPreview">R$ 0,00</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal (Dados de Entrega & WhatsApp) -->
+  <div class="modal-overlay" id="checkoutModalOverlay">
+    <div class="modal-card checkout-modal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Fechar">✕</button>
+
+      <div class="checkout-modal-header">
+        <div class="checkout-step-badge">Etapa Final</div>
+        <h2>Finalizar Pedido</h2>
+        <p>Preencha seus dados para enviarmos diretamente ao WhatsApp da nossa equipe!</p>
+      </div>
+
+      <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+        <!-- Escolha de Unidade -->
+        <div class="form-section">
+          <label class="form-section-title">1. Unidade de Atendimento</label>
+          <div class="radio-card-grid">
+            <label class="radio-card">
+              <input type="radio" name="checkoutUnit" value="santa-luzia" checked onchange="onCheckoutUnitChange('santa-luzia')">
+              <div class="radio-card-content">
+                <strong>Santa Luzia</strong>
+                <small>Av. Brasília, 1420</small>
+              </div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="checkoutUnit" value="sao-benedito" onchange="onCheckoutUnitChange('sao-benedito')">
+              <div class="radio-card-content">
+                <strong>São Benedito</strong>
+                <small>Rua dos Comerciários, 310</small>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Tipo de Pedido: Entrega ou Retirada -->
+        <div class="form-section">
+          <label class="form-section-title">2. Como deseja receber?</label>
+          <div class="delivery-toggle-group">
+            <button type="button" class="deliv-toggle-btn active" id="btnTypeDelivery" onclick="setDeliveryType('delivery')">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <span>Entrega / Delivery</span>
+            </button>
+            <button type="button" class="deliv-toggle-btn" id="btnTypePickup" onclick="setDeliveryType('retirada')">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span>Retirada no Balcão</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Seus Dados -->
+        <div class="form-section">
+          <label class="form-section-title">3. Seus Dados de Contato</label>
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="clientName">Seu Nome Completo *</label>
+              <input type="text" id="clientName" required placeholder="Ex: Maria Silva">
+            </div>
+            <div class="form-group col-12">
+              <label for="clientPhone">Seu WhatsApp com DDD *</label>
+              <input type="tel" id="clientPhone" required placeholder="Ex: (31) 99999-9999" oninput="maskPhone(this)">
+            </div>
+          </div>
+        </div>
+
+        <!-- Endereço de Entrega (se delivery) -->
+        <div class="form-section" id="addressSection">
+          <label class="form-section-title">4. Endereço de Entrega</label>
+          <div class="form-row">
+            <div class="form-group col-8">
+              <label for="addrStreet">Rua / Avenida *</label>
+              <input type="text" id="addrStreet" placeholder="Ex: Rua das Flores">
+            </div>
+            <div class="form-group col-4">
+              <label for="addrNumber">Número *</label>
+              <input type="text" id="addrNumber" placeholder="Ex: 125">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="addrNeighborhood">Bairro *</label>
+              <input type="text" id="addrNeighborhood" placeholder="Ex: Santa Luzia / São Benedito">
+            </div>
+            <div class="form-group col-6">
+              <label for="addrComplement">Complemento / Apto</label>
+              <input type="text" id="addrComplement" placeholder="Ex: Apto 302, Bloco B">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="addrReference">Ponto de Referência</label>
+            <input type="text" id="addrReference" placeholder="Ex: Próximo à padaria central">
+          </div>
+        </div>
+
+        <!-- Pagamento -->
+        <div class="form-section">
+          <label class="form-section-title">5. Forma de Pagamento</label>
+          <div class="payment-options-grid">
+            <label class="payment-option-card">
+              <input type="radio" name="paymentMethod" value="PIX" checked onchange="onPaymentMethodChange('PIX')">
+              <div class="payment-card-body">
+                <span class="pay-icon">💠</span>
+                <strong>PIX</strong>
+                <small>Chave rápida no envio</small>
+              </div>
+            </label>
+            <label class="payment-option-card">
+              <input type="radio" name="paymentMethod" value="Cartão de Crédito" onchange="onPaymentMethodChange('Cartão de Crédito')">
+              <div class="payment-card-body">
+                <span class="pay-icon">💳</span>
+                <strong>Cartão Crédito</strong>
+                <small>Maquininha na entrega</small>
+              </div>
+            </label>
+            <label class="payment-option-card">
+              <input type="radio" name="paymentMethod" value="Cartão de Débito" onchange="onPaymentMethodChange('Cartão de Débito')">
+              <div class="payment-card-body">
+                <span class="pay-icon">💳</span>
+                <strong>Cartão Débito</strong>
+                <small>Maquininha na entrega</small>
+              </div>
+            </label>
+            <label class="payment-option-card">
+              <input type="radio" name="paymentMethod" value="Dinheiro" onchange="onPaymentMethodChange('Dinheiro')">
+              <div class="payment-card-body">
+                <span class="pay-icon">💵</span>
+                <strong>Dinheiro</strong>
+                <small>Com troco se precisar</small>
+              </div>
+            </label>
+          </div>
+
+          <!-- Campo de Troco (se dinheiro) -->
+          <div class="form-group" id="changeGroup" style="display:none; margin-top: 14px;">
+            <label for="needChangeFor">Precisa de troco para quanto?</label>
+            <input type="text" id="needChangeFor" placeholder="Ex: Troco para R$ 50,00 ou Não preciso">
+          </div>
+        </div>
+
+        <!-- Observações Gerais -->
+        <div class="form-section">
+          <label class="form-section-title">6. Observações do Pedido (Opcional)</label>
+          <textarea id="orderNotes" rows="2" placeholder="Ex: Tocar a campainha, mandar colheres e guardanapos adicionais..."></textarea>
+        </div>
+
+        <!-- Resumo Financeiro Final -->
+        <div class="checkout-order-summary">
+          <div class="checkout-summary-row">
+            <span>Subtotal de itens</span>
+            <span id="checkoutSubtotal">R$ 0,00</span>
+          </div>
+          <div class="checkout-summary-row" id="checkoutDeliveryRow">
+            <span>Taxa de Entrega</span>
+            <span id="checkoutDeliveryFee">R$ 5,00</span>
+          </div>
+          <div class="checkout-summary-row final-row">
+            <span>Total a Pagar</span>
+            <span id="checkoutGrandTotal">R$ 0,00</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="checkout-submit-area">
+          <button type="submit" class="btn btn-primary btn-block btn-xl whatsapp-checkout-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            <span>Confirmar e Enviar Pedido via WhatsApp</span>
+          </button>
+          <p class="checkout-security-notice">
+            🔒 Seus dados estão protegidos. Você será redirecionado para o WhatsApp oficial da Frutos de Goiás com a mensagem já prontinha!
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success Confirmation Modal -->
+  <div class="modal-overlay" id="orderSuccessModal">
+    <div class="modal-card success-modal" role="dialog" aria-modal="true">
+      <div class="success-icon-wrap">🎉</div>
+      <h2>Pedido Enviado com Sucesso!</h2>
+      <p class="success-message">
+        Seu pedido foi registrado e enviado para o WhatsApp da unidade <strong id="successUnitName">Santa Luzia</strong>.
+      </p>
+
+      <div class="success-summary-box" id="successSummaryBox">
+        <!-- Injected details -->
+      </div>
+
+      <div class="success-actions">
+        <a id="successWhatsAppLink" href="#" target="_blank" class="btn btn-primary btn-block btn-lg">
+          Abrir Conversa no WhatsApp
+        </a>
+        <button class="btn btn-secondary btn-block" onclick="closeSuccessModalAndReset()">
+          Fazer Outro Pedido
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info Modal (Privacidade / Termos) -->
+  <div class="modal-overlay" id="modalPrivacidade">
+    <div class="modal-card info-modal" role="dialog">
+      <button class="modal-close-btn" onclick="closeModal('modalPrivacidade')">✕</button>
+      <h3>Política de Privacidade</h3>
+      <div class="modal-info-text">
+        <p>A Frutos de Goiás respeita sua privacidade. As informações fornecidas durante o pedido (como nome, telefone e endereço) são utilizadas exclusivamente para:</p>
+        <ul>
+          <li>Processamento e entrega do seu pedido de sorvetes e açaí;</li>
+          <li>Comunicação via WhatsApp referente ao andamento da entrega;</li>
+          <li>Emissão de cupom ou suporte ao cliente.</li>
+        </ul>
+        <p>Não compartilhamos nem comercializamos seus dados com terceiros em hipótese alguma.</p>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="closeModal('modalPrivacidade')">Entendi</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalTermos">
+    <div class="modal-card info-modal" role="dialog">
+      <button class="modal-close-btn" onclick="closeModal('modalTermos')">✕</button>
+      <h3>Termos de Pedido e Entrega</h3>
+      <div class="modal-info-text">
+        <p>Ao realizar seu pedido pelo nosso cardápio digital, você concorda com as seguintes condições:</p>
+        <ul>
+          <li><strong>Tempo de entrega:</strong> Varia entre 30 e 50 minutos dependendo do bairro e da demanda climática.</li>
+          <li><strong>Disponibilidade:</strong> Caso algum sabor de pote ou complemento esgote na unidade escolhida, nossa equipe entrará em contato via WhatsApp oferecendo opções similares.</li>
+          <li><strong>Cancelamentos:</strong> Podem ser solicitados antes do envio do entregador.</li>
+        </ul>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="closeModal('modalTermos')">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
