@@ -36,8 +36,8 @@
             <span>Unidade:</span>
           </label>
           <select id="store-unit-select" class="unit-select" onchange="changeStoreUnit(this.value)">
-            <option value="santa-luzia">Santa Luzia (Av. Brasília)</option>
-            <option value="sao-benedito">São Benedito (R. Comerciários)</option>
+            <option value="santa-luzia">Santa Luzia</option>
+            <option value="sao-benedito">São Benedito</option>
           </select>
         </div>
         <a href="https://instagram.com/frutosdegoiassantaluzia" target="_blank" rel="noopener" class="top-social-link" title="Siga no Instagram">
@@ -92,15 +92,6 @@
         <!-- Search Trigger / Quick Search -->
         <button class="icon-btn search-toggle-btn" onclick="focusSearchInput()" aria-label="Buscar no cardápio" title="Buscar no cardápio">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </button>
-
-        <!-- Cart Button -->
-        <button class="cart-trigger-btn" onclick="openCartDrawer()" aria-label="Abrir carrinho de compras">
-          <div class="cart-icon-wrap">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-            <span class="cart-badge" id="cartCountBadge">0</span>
-          </div>
-          <span class="cart-total-text" id="cartTotalHeader">R$ 0,00</span>
         </button>
 
         <!-- Mobile Menu Toggle Button -->
@@ -238,8 +229,8 @@
           <div class="unit-quick-icon">📍</div>
           <div class="unit-quick-info">
             <span class="unit-badge">Unidade 1</span>
-            <h3>Santa Luzia (Centro Comercial)</h3>
-            <p>Av. Brasília, 1420 • Aberto hoje até 22:30</p>
+            <h3>Santa Luzia</h3>
+            <p>R. Jaime Carlos Afonso Teixeira, 66 - Bela Vista • Aberto hoje até 21:00</p>
           </div>
           <button class="unit-select-btn" onclick="changeStoreUnit('santa-luzia')">Selecionada</button>
         </div>
@@ -248,8 +239,8 @@
           <div class="unit-quick-icon">📍</div>
           <div class="unit-quick-info">
             <span class="unit-badge">Unidade 2</span>
-            <h3>São Benedito (Região Central)</h3>
-            <p>Rua dos Comerciários, 310 • Aberto hoje até 23:00</p>
+            <h3>São Benedito</h3>
+            <p>Av. Brasília, 1858 • Aberto hoje até 23:00</p>
           </div>
           <button class="unit-select-btn" onclick="changeStoreUnit('sao-benedito')">Selecionar</button>
         </div>
@@ -583,7 +574,7 @@
           <div class="unidade-header">
             <div>
               <span class="unidade-tag">Unidade 01</span>
-              <h3 class="unidade-nome">Santa Luzia Centro</h3>
+              <h3 class="unidade-nome">Santa Luzia</h3>
             </div>
             <span class="status-open-pill">Aberto Agora</span>
           </div>
@@ -593,7 +584,7 @@
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               <div>
                 <strong>Endereço:</strong>
-                <p>Av. Brasília, 1420 - Centro Comercial, Santa Luzia - MG</p>
+                <p>R. Jaime Carlos Afonso Teixeira, 66 - Bela Vista, Santa Luzia - MG, 33010-515</p>
               </div>
             </div>
 
@@ -601,7 +592,7 @@
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               <div>
                 <strong>Horário de Funcionamento:</strong>
-                <p>Segunda a Domingo: 12:00 às 22:30</p>
+                <p>Aberto · Fecha às 21:00</p>
               </div>
             </div>
 
@@ -609,14 +600,15 @@
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               <div>
                 <strong>WhatsApp / Pedidos:</strong>
-                <p>(31) 98765-4321</p>
+                <p><a href="https://api.whatsapp.com/send?phone=5531995809341" target="_blank" rel="noopener" style="color:var(--color-primary); font-weight:700; text-decoration:underline;">(31) 99580-9341</a></p>
               </div>
             </div>
           </div>
 
           <div class="unidade-actions">
             <button class="btn btn-primary btn-block" onclick="selectUnitAndGoToMenu('santa-luzia')">Pedir Nesta Unidade</button>
-            <a href="https://maps.google.com/?q=Av.+Brasilia+1420+Santa+Luzia+MG" target="_blank" rel="noopener" class="btn btn-outline btn-block">Ver Rota no Google Maps</a>
+            <a href="https://api.whatsapp.com/send?phone=5531995809341" target="_blank" rel="noopener" class="btn btn-secondary btn-block" style="border-color:#25d366; color:#128c7e;">Falar no WhatsApp (31) 99580-9341</a>
+            <a href="https://maps.google.com/?q=Rua+Jaime+Carlos+Afonso+Teixeira+66+Bela+Vista+Santa+Luzia+MG+33010-515" target="_blank" rel="noopener" class="btn btn-outline btn-block">Ver Rota no Google Maps</a>
           </div>
         </div>
 
@@ -635,7 +627,7 @@
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               <div>
                 <strong>Endereço:</strong>
-                <p>Rua dos Comerciários, 310 - São Benedito, Santa Luzia - MG</p>
+                <p>Av. Brasília, 1858 - São Benedito, Santa Luzia - MG, 33105-515</p>
               </div>
             </div>
 
@@ -651,14 +643,15 @@
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               <div>
                 <strong>WhatsApp / Pedidos:</strong>
-                <p>(31) 98765-4322</p>
+                <p><a href="https://api.whatsapp.com/send?phone=5531999555848" target="_blank" rel="noopener" style="color:var(--color-primary); font-weight:700; text-decoration:underline;">(31) 99955-5848</a></p>
               </div>
             </div>
           </div>
 
           <div class="unidade-actions">
             <button class="btn btn-primary btn-block" onclick="selectUnitAndGoToMenu('sao-benedito')">Pedir Nesta Unidade</button>
-            <a href="https://maps.google.com/?q=Rua+dos+Comerciarios+310+Sao+Benedito+Santa+Luzia+MG" target="_blank" rel="noopener" class="btn btn-outline btn-block">Ver Rota no Google Maps</a>
+            <a href="https://api.whatsapp.com/send?phone=5531999555848" target="_blank" rel="noopener" class="btn btn-secondary btn-block" style="border-color:#25d366; color:#128c7e;">Falar no WhatsApp (31) 99955-5848</a>
+            <a href="https://maps.google.com/?q=Av.+Brasilia+1858+Sao+Benedito+Santa+Luzia+MG+33105-515" target="_blank" rel="noopener" class="btn btn-outline btn-block">Ver Rota no Google Maps</a>
           </div>
         </div>
       </div>
@@ -701,13 +694,13 @@
         <h4 class="footer-col-title">Nossas Unidades</h4>
         <div class="footer-unidade-item">
           <strong>Santa Luzia</strong>
-          <p>Av. Brasília, 1420 - Centro Comercial</p>
-          <small>Tel / WhatsApp: (31) 98765-4321</small>
+          <p>R. Jaime Carlos Afonso Teixeira, 66 - Bela Vista</p>
+          <small>Tel / WhatsApp: (31) 99580-9341</small>
         </div>
         <div class="footer-unidade-item">
           <strong>São Benedito</strong>
-          <p>Rua dos Comerciários, 310</p>
-          <small>Tel / WhatsApp: (31) 98765-4322</small>
+          <p>Av. Brasília, 1858 - São Benedito</p>
+          <small>Tel / WhatsApp: (31) 99955-5848</small>
         </div>
       </div>
 
@@ -715,7 +708,7 @@
         <h4 class="footer-col-title">Horário de Atendimento</h4>
         <p class="footer-hours">
           Segunda a Domingo<br>
-          <strong>12:00 às 22:30</strong> (Santa Luzia)<br>
+          <strong>Aberto até às 21:00</strong> (Santa Luzia)<br>
           <strong>12:00 às 23:00</strong> (São Benedito)
         </p>
         <div class="payment-methods-strip">
@@ -775,7 +768,7 @@
     <!-- Active Store Banner inside Drawer -->
     <div class="cart-unit-indicator">
       <span>Unidade selecionada:</span>
-      <strong id="cartUnitName">Santa Luzia (Av. Brasília)</strong>
+      <strong id="cartUnitName">Santa Luzia</strong>
       <button class="cart-change-unit-link" onclick="toggleCartUnitSwitch()">Alterar</button>
     </div>
 
@@ -878,14 +871,14 @@
               <input type="radio" name="checkoutUnit" value="santa-luzia" checked onchange="onCheckoutUnitChange('santa-luzia')">
               <div class="radio-card-content">
                 <strong>Santa Luzia</strong>
-                <small>Av. Brasília, 1420</small>
+                <small>R. Jaime Carlos Afonso Teixeira, 66</small>
               </div>
             </label>
             <label class="radio-card">
               <input type="radio" name="checkoutUnit" value="sao-benedito" onchange="onCheckoutUnitChange('sao-benedito')">
               <div class="radio-card-content">
                 <strong>São Benedito</strong>
-                <small>Rua dos Comerciários, 310</small>
+                <small>Av. Brasília, 1858</small>
               </div>
             </label>
           </div>
