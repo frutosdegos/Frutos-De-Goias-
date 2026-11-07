@@ -13,7 +13,8 @@ const STORE_UNITS = {
     displayPhone: '(31) 99580-9341',
     deliveryFee: 5.00,
     minOrder: 15.00,
-    hours: 'Aberto · Fecha às 21:00'
+    hours: 'Aberto · Fecha às 21:00',
+    ifoodUrl: 'https://linktr.ee/frutosdegoiassantaluzia?utm_source=ig&utm_medium=social&utm_content=link_in_bio'
   },
   'sao-benedito': {
     id: 'sao-benedito',
@@ -23,9 +24,19 @@ const STORE_UNITS = {
     displayPhone: '(31) 99955-5848',
     deliveryFee: 5.00,
     minOrder: 15.00,
-    hours: '12:00 às 23:00'
+    hours: '12:00 às 23:00',
+    ifoodUrl: 'https://linktr.ee/frutosdegoiassantaluzia?utm_source=ig&utm_medium=social&utm_content=link_in_bio'
   }
 };
+
+// Redirecionamento Direto para o iFood
+function redirectToIfood(productId) {
+  const unit = (typeof currentStoreUnit !== 'undefined' && STORE_UNITS[currentStoreUnit]) 
+    ? STORE_UNITS[currentStoreUnit] 
+    : STORE_UNITS['santa-luzia'];
+  const url = unit.ifoodUrl || 'https://linktr.ee/frutosdegoiassantaluzia?utm_source=ig&utm_medium=social&utm_content=link_in_bio';
+  window.open(url, '_blank');
+}
 
 // Catálogo de Produtos
 const PRODUCTS_DATA = [
@@ -33,69 +44,63 @@ const PRODUCTS_DATA = [
   {
     id: 'acai-barca',
     category: 'acai',
-    name: 'Barca de Açaí Frutos de Goiás',
-    description: 'Nossa famosa barca recheada com açaí artesanal super cremoso. Inclui frutas frescas, leite Ninho, Nutella e paçoca crocante.',
-    price: 34.90,
-    badge: '⭐ Mais Pedido',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80',
+    name: 'Barca Frutos de Goiás (Açaí ou Sorvete)',
+    description: 'Açaí artesanal super cremoso ou sorvete servidos em nossa famosa barca com complementos: Banana, Morango, Manga, Leite Ninho e Leite Condensado.',
+    price: 65.90,
+    badge: '⭐ A Famosa Barca',
+    image: 'assets/barca.jpg',
     tags: ['destaques', 'acai'],
     customizable: true,
     sizes: [
-      { name: 'Barca P (Aprox. 500ml)', price: 34.90 },
-      { name: 'Barca M (Aprox. 700ml)', price: 43.90 },
-      { name: 'Barca G Família (Aprox. 1.1 Litros)', price: 58.90 }
+      { name: 'Barca Média', price: 65.90 },
+      { name: 'Barca Grande', price: 87.90 }
     ],
-    freeComplementsLimit: 3,
+    freeComplementsLimit: 5,
     freeComplements: [
       'Banana fatiada',
       'Morango fresco picado',
+      'Manga fresca em pedaços',
       'Leite em pó (Ninho)',
-      'Granola tradicional',
-      'Paçoca de amendoim triturada',
-      'Flocos de tapioca crocante',
-      'Gotas de chocolate meio amargo',
-      'Leite condensado'
+      'Leite condensado cremoso'
     ],
     paidAdditions: [
       { name: 'Dose Extra de Nutella Original', price: 6.00 },
-      { name: 'Castanha de Baru do Cerrado Torrada', price: 5.50 },
+      { name: 'Castanha de Baru Torrada', price: 5.50 },
       { name: 'Bombom Ouro Branco picado', price: 4.50 },
-      { name: 'KitKat crocante em pedaços', price: 5.00 },
-      { name: 'Kiwi fresco picado', price: 4.50 },
-      { name: 'Mel puro de abelha', price: 3.50 }
+      { name: 'Confetes Chocoball', price: 4.00 }
     ],
-    sauces: ['Sem calda', 'Calda de Morango', 'Calda de Chocolate', 'Calda de Caramelo', 'Leite Condensado']
+    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate', 'Sem cobertura extra']
   },
   {
     id: 'acai-taca-tradicional',
     category: 'acai',
-    name: 'Açaí na Taça Tradicional',
-    description: 'O puro açaí cremoso batido na textura perfeita com xarope de guaraná suave ou sem açúcar. Acompanha granola e banana.',
-    price: 18.90,
-    badge: 'Refrescante',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80',
-    tags: ['acai'],
+    name: 'Taça de Açaí Frutos de Goiás',
+    description: 'A mais famosa do Brasil! Escolha o tamanho e os complementos para prepararmos tudo do seu jeito: Banana, Manga, Morango, Granola, Leite em Pó e Leite Condensado.',
+    price: 32.90,
+    badge: '⭐ Mais Famosa do Brasil',
+    image: 'assets/taca_acai.jpg',
+    tags: ['destaques', 'acai'],
     customizable: true,
     sizes: [
-      { name: 'Taça 300ml', price: 18.90 },
-      { name: 'Taça 500ml', price: 24.90 },
-      { name: 'Taça 700ml (Generosa)', price: 31.90 }
+      { name: 'Taça Média (3 bolas)', price: 32.90 },
+      { name: 'Taça Grande (4 bolas)', price: 38.90 }
     ],
-    freeComplementsLimit: 2,
+    freeComplementsLimit: 6,
     freeComplements: [
       'Banana fatiada',
-      'Granola artesanal',
-      'Leite Ninho',
-      'Paçoca',
-      'Leite condensado'
+      'Manga fresca em cubos',
+      'Morango fresco',
+      'Granola crocante',
+      'Leite em Pó (Ninho)',
+      'Leite Condensado'
     ],
     paidAdditions: [
-      { name: 'Morango fresco', price: 4.00 },
       { name: 'Nutella Original', price: 5.50 },
-      { name: 'Castanha de Baru', price: 5.50 },
-      { name: 'Gotas de Chocolate', price: 3.50 }
+      { name: 'Castanha de Baru do Cerrado', price: 5.50 },
+      { name: 'Bombom Ouro Branco', price: 4.50 },
+      { name: 'Tubetes Crocantes', price: 3.50 }
     ],
-    sauces: ['Sem calda', 'Leite Condensado', 'Morango', 'Chocolate']
+    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate', 'Sem cobertura']
   },
   {
     id: 'acai-trufado-especial',
@@ -104,7 +109,7 @@ const PRODUCTS_DATA = [
     description: 'Taça de 500ml com paredes cobertas de Nutella pura, camadas de açaí artesanal, muito leite Ninho e morangos frescos selecionados.',
     price: 28.90,
     badge: '👑 Trufado',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80',
+    image: 'assets/taca_acai.jpg',
     tags: ['destaques', 'acai'],
     customizable: true,
     sizes: [
@@ -132,7 +137,7 @@ const PRODUCTS_DATA = [
     description: 'Polpa de açaí pura sem adição de xarope ou açúcar. Perfeito para quem mantém a dieta ou busca o sabor autêntico e saudável do fruto.',
     price: 20.90,
     badge: '🌱 Zero Açúcar',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80',
+    image: 'assets/taca_acai.jpg',
     tags: ['fit', 'acai'],
     customizable: true,
     sizes: [
@@ -162,7 +167,7 @@ const PRODUCTS_DATA = [
     description: 'A maior barca da Frutos de Goiás: serve até 4 pessoas! Açaí cremoso, morangos, bananas, uvas sem semente, Ninho, Nutella, KitKat, Ouro Branco e baru.',
     price: 68.90,
     badge: '🎉 Família',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80',
+    image: 'assets/barca.jpg',
     tags: ['acai'],
     customizable: true,
     sizes: [
@@ -189,164 +194,216 @@ const PRODUCTS_DATA = [
   {
     id: 'grand-shake',
     category: 'sobremesas',
-    name: 'Grand Shake Trufado na Taça',
-    description: 'Taça de 550ml besuntada com brigadeiro gourmet e castanhas, milkshake artesanal ultracremoso, chantilly fresco e picolé Frutos de Goiás espetado.',
-    price: 29.90,
-    badge: '👑 Destaque Especial',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80',
+    name: 'Grand Shake Trufado',
+    description: 'Simmm, com chocolate dentro e fora da taça! Nessa deliciosa sobremesa servida em taça de 500ml coberta por ganache de chocolate e chocoball com 1 Picolé gourmet mergulhado + Bombom Ouro Branco. Escolha o sabor do sorvete (até 2 sabores).',
+    price: 43.90,
+    badge: '👑 1 Picolé + Bombom',
+    image: 'assets/grand_shake.jpg',
     tags: ['destaques', 'sobremesas'],
     customizable: true,
     sizes: [
-      { name: 'Taça Grande 550ml', price: 29.90 }
+      { name: 'Taça Especial 500ml', price: 43.90 }
     ],
-    freeComplementsLimit: 1,
+    freeComplementsLimit: 2,
     freeComplements: [
-      'Sabor: Ninho com Nutella',
-      'Sabor: Chocolate Belga Intenso',
-      'Sabor: Morango com Calda Artesanal',
-      'Sabor: Castanha de Baru com Caramelo'
+      '1º Sabor: Chocolate Belga',
+      '1º Sabor: Morango Artesanal',
+      '1º Sabor: Baunilha Bourbon',
+      '1º Sabor: Ninho Trufado',
+      '1º Sabor: Castanha de Baru (Cerrado)',
+      '2º Sabor: Chocolate Belga',
+      '2º Sabor: Morango Artesanal',
+      '2º Sabor: Baunilha Bourbon',
+      '2º Sabor: Ninho Trufado',
+      '2º Sabor: Castanha de Baru (Cerrado)'
     ],
     paidAdditions: [
       { name: 'Adicionar Picolé Extra', price: 8.00 },
       { name: 'Farofa crocante de Baru', price: 4.50 },
-      { name: 'Bombom Ouro Branco', price: 4.50 }
+      { name: 'Bombom Ouro Branco Extra', price: 4.50 }
     ],
-    sauces: ['Ganache de Chocolate Belga', 'Caramelo Toffee', 'Morango']
+    sauces: ['Ganache de Chocolate Belga', 'Cobertura de Morango', 'Morango e Chocolate', 'Sem calda extra']
   },
   {
     id: 'petit-gateau',
     category: 'sobremesas',
-    name: 'Petit Gateau Supremo com Sorvete Artesanal',
-    description: 'Bolinho quente de chocolate belga com recheio cremoso escorrendo, acompanhado de bola de sorvete artesanal e calda quente de chocolate.',
-    price: 25.90,
+    name: 'Petit Gateau Supremo',
+    description: 'Delicioso Petit quentinho crocante por fora e gourmet por dentro! 1. Escolha por dentro (banana, morango ou até 2 sabores). Cobertura: Morango e/ou Chocolate.',
+    price: 32.90,
     badge: '🍫 Quente & Frio',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80',
+    image: 'assets/petit_gateau.jpg',
     tags: ['destaques', 'sobremesas'],
     customizable: true,
     sizes: [
-      { name: 'Porção Individual Completa', price: 25.90 }
+      { name: 'Porção Individual Completa', price: 32.90 }
     ],
-    freeComplementsLimit: 1,
+    freeComplementsLimit: 2,
     freeComplements: [
-      'Sorvete de Baunilha Bourbon Artesanal',
-      'Sorvete de Creme de Castanha de Baru',
-      'Sorvete de Doce de Leite com Queijo',
-      'Sorvete de Ninho Trufado'
+      'Fruta: Banana fresca',
+      'Fruta: Morango fresco',
+      'Sorvete: Baunilha Bourbon Artesanal',
+      'Sorvete: Creme de Castanha de Baru',
+      'Sorvete: Doce de Leite com Queijo',
+      'Sorvete: Ninho Trufado'
     ],
     paidAdditions: [
       { name: 'Bola Extra de Sorvete', price: 6.50 },
-      { name: 'Morangos frescos picados', price: 4.00 },
+      { name: 'Morangos frescos extras', price: 4.00 },
       { name: 'Castanha de Baru triturada', price: 4.50 }
     ],
-    sauces: ['Calda Quente de Chocolate Belga', 'Calda Quente de Caramelo Salgado', 'Calda de Frutas Vermelhas']
+    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate']
   },
   {
     id: 'sorvete-assado',
     category: 'sobremesas',
     name: 'Sorvete Assado Tradicional',
-    description: 'Uma das criações mais elogiadas da Frutos de Goiás: fatia generosa de pão de ló, sorvete artesanal e coberto com merengue maçaricado e dourado ao forno.',
-    price: 27.90,
+    description: '• Servido em uma cumbuca recheada com pão de ló. • Dois sabores de sorvete ou açaí. • Duas opções de frutas. Tudo isso coberto em um marshmallow crocante maçaricado (Morango e/ou Chocolate).',
+    price: 38.90,
     badge: '✨ Receita Exclusiva',
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80',
+    image: 'assets/sorvete_assado.jpg',
     tags: ['destaques', 'sobremesas'],
     customizable: true,
     sizes: [
-      { name: 'Porção Individual na Travessinha', price: 27.90 }
+      { name: 'Cumbuca Especial Tradicional', price: 38.90 }
     ],
-    freeComplementsLimit: 1,
+    freeComplementsLimit: 4,
     freeComplements: [
-      'Sorvete de Baunilha e Morango',
-      'Sorvete de Castanha de Baru',
-      'Sorvete de Pequi Suave',
-      'Sorvete de Flocos'
+      'Fruta 1: Banana fatiada',
+      'Fruta 1: Morango fresco',
+      'Fruta 1: Manga fresca',
+      'Fruta 2: Banana fatiada',
+      'Fruta 2: Morango fresco',
+      'Fruta 2: Manga fresca',
+      'Sorvete: Baunilha Bourbon',
+      'Sorvete: Morango Artesanal',
+      'Sorvete: Castanha de Baru',
+      'Sorvete: Açaí Cremoso'
     ],
     paidAdditions: [
       { name: 'Castanha de Baru crocante', price: 4.50 },
-      { name: 'Morangos frescos', price: 4.00 }
+      { name: 'Morangos frescos extras', price: 4.00 }
     ],
-    sauces: ['Calda de Caramelo', 'Calda de Frutas Vermelhas']
+    sauces: ['Cobertura de Morango', 'Cobertura de Chocolate', 'Morango e Chocolate', 'Sem cobertura extra']
   },
   {
     id: 'banana-split',
     category: 'sobremesas',
-    name: 'Banana Split Clássica da Casa',
-    description: 'Banana fresca cortada ao meio, 3 bolas de sorvete à sua escolha, coberturas de chocolate, morango e caramelo, chantilly cremoso, castanhas e cereja.',
-    price: 26.90,
-    badge: '🍌 Clássico',
-    image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80',
+    name: 'Banana Split Especial',
+    description: 'Sobremesa servida em uma clássica canoa com bananas frescas e bolas de sorvete. 1. Escolha os 3 sabores de sorvete. 2. Cobertura: Morango e/ou Chocolate.',
+    price: 38.90,
+    badge: '🍌 Clássico na Canoa',
+    image: 'assets/banana_split.jpg',
     tags: ['sobremesas'],
     customizable: true,
     sizes: [
-      { name: 'Taça Tradicional Completa (3 Bolas)', price: 26.90 }
+      { name: 'Canoa Completa (3 Bolas)', price: 38.90 }
     ],
     freeComplementsLimit: 3,
     freeComplements: [
       'Bola 1: Chocolate Belga',
-      'Bola 2: Morango com Pedaços',
-      'Bola 3: Creme de Baru',
-      'Opção: Baunilha Bourbon',
-      'Opção: Flocos Artesanal'
+      'Bola 1: Morango com Pedaços',
+      'Bola 1: Creme de Baru (Cerrado)',
+      'Bola 2: Baunilha Bourbon',
+      'Bola 2: Flocos Artesanal',
+      'Bola 2: Ninho Trufado',
+      'Bola 3: Açaí Cremoso',
+      'Bola 3: Mangaba do Cerrado',
+      'Bola 3: Doce de Leite'
     ],
     paidAdditions: [
       { name: 'Nutella adicional', price: 5.50 },
       { name: 'Castanha de Baru triturada', price: 4.50 }
     ],
-    sauces: ['Trio de Caldas (Chocolate, Morango e Caramelo)', 'Apenas Chocolate', 'Apenas Caramelo']
+    sauces: ['Cobertura de Morango', 'Cobertura de Chocolate', 'Morango e Chocolate']
   },
   {
     id: 'sundae-especial',
     category: 'sobremesas',
-    name: 'Sundae Especial Frutos de Goiás',
-    description: '2 bolas generosas de sorvete à sua escolha, calda quente e brilhante de chocolate belga, chantilly leve e finalizado com castanhas tostadas.',
-    price: 19.90,
-    badge: 'Delicioso',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80',
+    name: 'Sundae Frutos de Goiás',
+    description: 'Um clássico que nunca morre com o sabor Frutos de Goiás! 1. Escolha dois sabores de sorvete. 2. Escolha duas frutas (banana, manga ou morango). 3. Cobertura: Morango e/ou Chocolate.',
+    price: 32.90,
+    badge: '🍨 Clássico da Casa',
+    image: 'assets/sundae.jpg',
     tags: ['sobremesas'],
     customizable: true,
     sizes: [
-      { name: 'Taça Sundae (2 Bolas)', price: 19.90 }
+      { name: 'Taça Sundae (2 Bolas + 2 Frutas)', price: 32.90 }
     ],
-    freeComplementsLimit: 2,
+    freeComplementsLimit: 3,
     freeComplements: [
-      'Sorvete de Baunilha',
-      'Sorvete de Chocolate',
-      'Sorvete de Morango',
-      'Sorvete de Mangaba (Cerrado)',
-      'Sorvete de Cajá'
+      'Fruta: Banana fresca',
+      'Fruta: Manga em cubos',
+      'Fruta: Morango fresco',
+      'Sorvete: Baunilha Bourbon',
+      'Sorvete: Chocolate Belga',
+      'Sorvete: Morango Artesanal',
+      'Sorvete: Mangaba do Cerrado'
     ],
     paidAdditions: [
       { name: 'Chantilly Extra', price: 3.50 },
       { name: 'Castanha de Baru', price: 4.50 }
     ],
-    sauces: ['Calda Quente de Chocolate', 'Calda de Morango', 'Calda de Caramelo']
+    sauces: ['Cobertura de Morango', 'Cobertura de Chocolate', 'Morango e Chocolate']
   },
   {
     id: 'bolo-na-taca',
     category: 'sobremesas',
-    name: 'Bolo na Taça Ninho com Morango',
-    description: 'Camadas de bolo de baunilha úmido e fofinho, recheio trufado de leite Ninho, morangos frescos picados e uma bola do nosso sorvete artesanal.',
-    price: 24.90,
-    badge: '🍰 Irresistível',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80',
+    name: 'Bolo na Taça Brownie Supremo',
+    description: 'Delicioso brownie quentinho na taça com Morango fresco, Confete, chocoball, Leite em Pó e cobertura de morango e/ou chocolate.',
+    price: 32.90,
+    badge: '🍰 Brownie Quentinho',
+    image: 'assets/bolo_taca.jpg',
     tags: ['sobremesas'],
     customizable: true,
     sizes: [
-      { name: 'Taça de 400ml', price: 24.90 }
+      { name: 'Taça Brownie Especial', price: 32.90 }
     ],
-    freeComplementsLimit: 1,
+    freeComplementsLimit: 3,
     freeComplements: [
-      'Sorvete de Ninho Trufado',
-      'Sorvete de Morango com pedaços',
-      'Sorvete de Baunilha'
+      'Morangos frescos',
+      'Confetes Chocoball',
+      'Leite em Pó (Ninho)',
+      'Sorvete de Baunilha',
+      'Sorvete de Ninho Trufado'
     ],
     paidAdditions: [
       { name: 'Nutella na borda', price: 5.00 },
       { name: 'Morangos frescos extras', price: 4.00 }
     ],
-    sauces: ['Calda de Morango Artesanal', 'Sem calda extra']
+    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate']
   },
 
   // --- CATEGORIA: MILK SHAKES & VITAMINAS ---
+  {
+    id: 'milk-shake-tradicional',
+    category: 'shakes',
+    name: 'Milk Shake Frutos de Goiás',
+    description: 'Cremoso e refrescante servido na taça! 1. Escolha o sabor do sorvete artesanal. 2. Escolha a cobertura: Morango e/ou Chocolate.',
+    price: 27.90,
+    badge: '🥤 Super Cremoso',
+    image: 'assets/milk_shake.jpg',
+    tags: ['destaques', 'shakes'],
+    customizable: true,
+    sizes: [
+      { name: 'Médio', price: 27.90 },
+      { name: 'Grande', price: 32.90 }
+    ],
+    freeComplementsLimit: 1,
+    freeComplements: [
+      'Sorvete de Açaí Cremoso',
+      'Sorvete de Baunilha Bourbon',
+      'Sorvete de Chocolate Belga',
+      'Sorvete de Morango Artesanal',
+      'Sorvete de Ninho Trufado',
+      'Sorvete de Castanha de Baru'
+    ],
+    paidAdditions: [
+      { name: 'Chantilly Tradicional Extra', price: 3.50 },
+      { name: 'Ovomaltine Crocante no Topo', price: 3.50 },
+      { name: 'Borda com Nutella Pura', price: 5.00 }
+    ],
+    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate', 'Sem cobertura']
+  },
   {
     id: 'shake-ovomaltine',
     category: 'shakes',
@@ -354,7 +411,7 @@ const PRODUCTS_DATA = [
     description: 'O clássico mais amado: sorvete cremoso de baunilha batido com bastante Ovomaltine suíço, calda de chocolate e pedacinhos crocantes.',
     price: 21.90,
     badge: 'Crocante',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80',
+    image: 'assets/milk_shake.jpg',
     tags: ['shakes'],
     customizable: true,
     sizes: [
@@ -379,7 +436,7 @@ const PRODUCTS_DATA = [
     description: 'Bordas lambuzadas com pura Nutella, batido com sorvete artesanal de leite Ninho e finalizado com leite condensado e ninho polvilhado.',
     price: 23.90,
     badge: '👑 Campeão de Pedidos',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80',
+    image: 'assets/milk_shake.jpg',
     tags: ['destaques', 'shakes'],
     customizable: true,
     sizes: [
@@ -820,9 +877,9 @@ function renderProducts() {
               <small>${product.sizes && product.sizes.length > 1 ? 'A partir de' : 'Valor'}</small>
               <strong>R$ ${product.price.toFixed(2).replace('.', ',')}</strong>
             </div>
-            <button class="btn btn-primary btn-sm btn-pedir" onclick="openProductCustomizer('${product.id}')">
-              <span>${product.customizable ? 'Personalizar' : 'Adicionar'}</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood('${product.id}')" title="Pedir no iFood">
+              <span>Pedir no iFood</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
           </div>
         </div>
@@ -964,7 +1021,8 @@ function openProductCustomizer(productId) {
   document.getElementById('customizerTitle').textContent = product.name;
   document.getElementById('customizerDesc').textContent = product.description;
   document.getElementById('customizerBasePrice').textContent = customizerSelectedSize.price.toFixed(2).replace('.', ',');
-  document.getElementById('customizerQty').textContent = customizerQuantity;
+  const qtyEl = document.getElementById('customizerQty');
+  if (qtyEl) qtyEl.textContent = customizerQuantity;
 
   // Montar Seções de Opções Dinamicamente
   const body = document.getElementById('customizerOptionsBody');
@@ -1236,23 +1294,11 @@ function loadCartFromStorage() {
 }
 
 function openCartDrawer() {
-  const drawer = document.getElementById('cartDrawer');
-  const overlay = document.getElementById('cartOverlay');
-  if (drawer && overlay) {
-    drawer.classList.add('active');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  redirectToIfood();
 }
 
 function closeCartDrawer() {
-  const drawer = document.getElementById('cartDrawer');
-  const overlay = document.getElementById('cartOverlay');
-  if (drawer && overlay) {
-    drawer.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
+  // Carrinho substituído por redirecionamento direto para o iFood
 }
 
 function updateCartUI() {
@@ -1279,8 +1325,8 @@ function updateCartUI() {
   if (totalHeader) totalHeader.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
   if (itemsCountLabel) itemsCountLabel.textContent = `(${totalItems} ${totalItems === 1 ? 'item' : 'itens'})`;
 
-  // Mobile Bottom Bar
-  if (mobileBar) {
+  // Mobile Bottom Bar (iFood bar fica sempre ativa ou visível para redirecionamento)
+  if (mobileBar && !mobileBar.classList.contains('ifood-floating-bar')) {
     if (totalItems > 0) {
       mobileBar.classList.add('visible');
       if (mobileCount) mobileCount.textContent = totalItems;
