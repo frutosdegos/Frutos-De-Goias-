@@ -1,4 +1,4 @@
-/**
+﻿/**
  * FRUTOS DE GOIÁS - UNIDADES SANTA LUZIA & SÃO BENEDITO
  * Sistema de E-Commerce & Cardápio Digital Interativo
  */
@@ -24,7 +24,7 @@ const STORE_UNITS = {
     displayPhone: '(31) 99955-5848',
     deliveryFee: 5.00,
     minOrder: 15.00,
-    hours: '12:00 às 23:00',
+    hours: '10:00 às 21:00',
     ifoodUrl: 'https://linktr.ee/frutosdegoiassantaluzia?utm_source=ig&utm_medium=social&utm_content=link_in_bio'
   }
 };
@@ -38,693 +38,378 @@ function redirectToIfood(productId) {
   window.open(url, '_blank');
 }
 
-// Catálogo de Produtos
+// Catálogo de Produtos Atualizado (iFood Frutos de Goiás)
 const PRODUCTS_DATA = [
-  // --- CATEGORIA: AÇAÍ & BARCAS ---
+  // ==========================================================================
+  // --- 1. AÇAÍ ---
+  // ==========================================================================
+  {
+    id: 'acai-premium-1l',
+    category: 'acai',
+    name: 'Açaí Premium 1 L',
+    description: 'Pote de Açaí Premium 1L. Máxima concentração, cremosidade artesanal incomparável e sabor puro Frutos de Goiás.',
+    price: 85.90,
+    badge: '⭐ Pote 1 Litro',
+    image: 'assets/acai_premium_1l.jpg',
+    tags: ['destaques', 'acai', 'potes'],
+    customizable: false
+  },
+  {
+    id: 'acai-tradicional-360',
+    category: 'acai',
+    name: 'Açaí tradicional 360 Ml',
+    description: 'Açaí tradicional super cremoso servido no copo 360ml Frutos de Goiás.',
+    price: 24.90,
+    badge: 'Cremoso',
+    image: 'assets/acai_tradicional_copo.jpg',
+    tags: ['acai'],
+    customizable: false
+  },
+  {
+    id: 'acai-tradicional-480',
+    category: 'acai',
+    name: 'Açaí tradicional 480 Ml',
+    description: 'Açaí tradicional batido e cremoso servido em copo de 480ml Frutos de Goiás.',
+    price: 32.90,
+    badge: 'Mais Pedido',
+    image: 'assets/acai_tradicional_copo.jpg',
+    tags: ['destaques', 'acai'],
+    customizable: false
+  },
+  {
+    id: 'acai-premium-sorvete-360',
+    category: 'acai',
+    name: 'Açaí Premium (com opção de sorvete) | 360ml + complementos gratuitos',
+    description: 'Escolha três sabores da sua preferência. Acompanha complementos inclusos generosos.',
+    price: 32.90,
+    badge: 'Com Complementos',
+    image: 'assets/acai_premium_copo.jpg',
+    tags: ['acai'],
+    customizable: false
+  },
+  {
+    id: 'acai-premium-sorvete-480',
+    category: 'acai',
+    name: 'Açaí Premium (com opção de sorvete) | 480 Ml + complementos gratuitos',
+    description: 'Escolha 4 sabores da sua preferência. Acompanha complementos gratuitos e montagem especial.',
+    price: 44.90,
+    badge: '👑 Campeão de Pedidos',
+    image: 'assets/acai_premium_copo.jpg',
+    tags: ['destaques', 'acai'],
+    customizable: false
+  },
+  {
+    id: 'potes-acai-variados',
+    category: 'acai',
+    name: 'Potes de açaí | Tradicional, Zero Açúcar e Zero lactose',
+    description: 'Açaí tradicional e zero lactose nos tamanhos de 1,5l e 250ml, além da opção zero açúcar 1 Litro.',
+    price: 25.30,
+    badge: 'A partir de R$ 25,30',
+    image: 'assets/potes_acai_variados.jpg',
+    tags: ['acai', 'potes', 'zero'],
+    customizable: false
+  },
+
+  // ==========================================================================
+  // --- 2. PICOLÉS E PALETAS ---
+  // ==========================================================================
+  {
+    id: 'picoles-tradicionais-leite',
+    category: 'picoles',
+    name: 'Picolés Tradicionais | Base de leite',
+    description: 'Picolés tradicionais à base de leite, cremosos e autênticos (Limão Suíço, Abacate, Coco Branco, Amendoim e muito mais).',
+    price: 10.99,
+    badge: 'A partir de R$ 10,99',
+    image: 'assets/picoles_tradicionais_leite.jpg',
+    tags: ['picoles'],
+    customizable: false
+  },
+  {
+    id: 'picoles-tradicionais-zero-lactose',
+    category: 'picoles',
+    name: 'Picolés Tradicionais | Zero Lactose',
+    description: 'À base de água e polpa pura de frutas naturais: Melancia, Abacaxi, Limão, Morango e frutos autênticos do cerrado.',
+    price: 10.99,
+    badge: '100% Fruta',
+    image: 'assets/picoles_zero_lactose.jpg',
+    tags: ['picoles', 'zero'],
+    customizable: false
+  },
+  {
+    id: 'picoles-premium',
+    category: 'picoles',
+    name: 'Picolés Premium',
+    description: 'Picolés especiais com casquinha e recheios trufados artesanais irresistíveis. Serve 1 pessoa.',
+    price: 13.99,
+    badge: 'Trufado',
+    image: 'assets/picole_premium_trufado.jpg',
+    tags: ['picoles', 'destaques'],
+    customizable: false
+  },
+  {
+    id: 'picoles-gourmet',
+    category: 'picoles',
+    name: 'Picolés Gourmet',
+    description: 'Linha gourmet de alta sofisticação com sabores exclusivos como Pistache Nobre e casquinha especial.',
+    price: 16.10,
+    badge: 'Linha Gourmet',
+    image: 'assets/picole_gourmet_pistache.jpg',
+    tags: ['picoles'],
+    customizable: false
+  },
+  {
+    id: 'paletas-recheadas',
+    category: 'picoles',
+    name: 'Paletas Recheadas',
+    description: 'Verdadeiras paletas mexicanas artesanais com recheio cremoso generoso, como Morango com Leite Condensado.',
+    price: 25.90,
+    badge: 'Super Recheada',
+    image: 'assets/paletas_recheadas.jpg',
+    tags: ['picoles', 'destaques'],
+    customizable: false
+  },
+  {
+    id: 'picoles-diet',
+    category: 'picoles',
+    name: 'Picolés Diet | sem adição de açúcar',
+    description: 'Toda a cremosidade e autenticidade da Frutos de Goiás sem adição de açúcar (Morango, Ninho Trufado, Abacaxi).',
+    price: 13.99,
+    badge: 'Zero Açúcar',
+    image: 'assets/picoles_diet.jpg',
+    tags: ['picoles', 'zero'],
+    customizable: false
+  },
+
+  // ==========================================================================
+  // --- 3. COMBOS DE PICOLÉS ---
+  // ==========================================================================
+  {
+    id: 'combo-6-picoles-tradicionais',
+    category: 'combos',
+    name: 'Combo 6 Picolés Tradicionais',
+    description: 'Escolha 6 sabores de picolés tradicionais a base de água e zero lactose, e ganhe um super desconto.',
+    price: 54.95,
+    badge: 'Super Desconto',
+    image: 'assets/picoles_tradicionais_leite.jpg',
+    tags: ['combos'],
+    customizable: false
+  },
+  {
+    id: 'combo-12-picoles-tradicionais',
+    category: 'combos',
+    name: 'Combo 12 Picolés Tradicionais',
+    description: 'Escolha 12 sabores de picolés tradicionais a base de água e zero lactose, e ganhe um super desconto.',
+    price: 109.90,
+    badge: 'Mais Vendido',
+    image: 'assets/picoles_tradicionais_leite.jpg',
+    tags: ['combos', 'destaques'],
+    customizable: false
+  },
+  {
+    id: 'combo-6-picoles-premium',
+    category: 'combos',
+    name: 'Combo 6 Picolés Premium',
+    description: 'Escolha 6 picolés premium e ganhe um super desconto.',
+    price: 69.95,
+    badge: 'Desconto Especial',
+    image: 'assets/picole_premium_trufado.jpg',
+    tags: ['combos'],
+    customizable: false
+  },
+  {
+    id: 'combo-12-picoles-premium',
+    category: 'combos',
+    name: 'Combo 12 picolés Premium',
+    description: 'Escolha 12 picolés premium e ganhe um super desconto.',
+    price: 139.90,
+    badge: 'Combo Família',
+    image: 'assets/picole_premium_trufado.jpg',
+    tags: ['combos'],
+    customizable: false
+  },
+  {
+    id: 'combo-6-picoles-gourmet',
+    category: 'combos',
+    name: 'Combo 6 Picolés Gourmet',
+    description: 'Escolha 6 picolés gourmet Frutos de Goiás.',
+    price: 79.95,
+    badge: 'Gourmet',
+    image: 'assets/picole_gourmet_pistache.jpg',
+    tags: ['combos'],
+    customizable: false
+  },
+  {
+    id: 'combo-12-picoles-gourmet',
+    category: 'combos',
+    name: 'Combo 12 Picolés Gourmet',
+    description: 'Escolha 12 picolés gourmet com super desconto exclusivo.',
+    price: 159.90,
+    badge: 'Máxima Economia',
+    image: 'assets/picole_gourmet_pistache.jpg',
+    tags: ['combos'],
+    customizable: false
+  },
+
+  // ==========================================================================
+  // --- 4. SORVETES ---
+  // ==========================================================================
+  {
+    id: 'sorvete-360-completo',
+    category: 'sorvetes',
+    name: 'Sorvete 360ml | Com complementos Gratuitos',
+    description: 'Escolha 3 sabores. Acompanha complementos inclusos para você saborear o melhor do sorvete artesanal.',
+    price: 32.90,
+    badge: '3 Sabores',
+    image: 'assets/sorvete_copo_sabores.jpg',
+    tags: ['sorvetes'],
+    customizable: false
+  },
+  {
+    id: 'sorvete-480-completo',
+    category: 'sorvetes',
+    name: 'Sorvete 480 Ml | Complementos Gratuitos',
+    description: 'Escolha 4 sabores da sua preferência. Acompanha complementos gratuitos.',
+    price: 44.90,
+    badge: '4 Sabores',
+    image: 'assets/sorvete_copo_sabores.jpg',
+    tags: ['sorvetes', 'destaques'],
+    customizable: false
+  },
+  {
+    id: 'pote-sorvete-15l',
+    category: 'sorvetes',
+    name: 'Pote de sorvete 1,5 L Tradicional ou Premium',
+    description: 'Pote de 1,5 Litros de sorvete tradicional e premium (Ninho Trufado, etc.). Perfeito para compartilhar.',
+    price: 79.90,
+    badge: 'A partir de R$ 79,90',
+    image: 'assets/pote_sorvete_15l.jpg',
+    tags: ['sorvetes', 'potes', 'destaques'],
+    customizable: false
+  },
+  {
+    id: 'pote-sorvete-zero-1l',
+    category: 'sorvetes',
+    name: 'Pote de sorvete zero açúcar 1 Litro',
+    description: 'Serve 4 pessoas. Sorvete cremoso zero açúcar artesanal com o autêntico sabor Frutos de Goiás.',
+    price: 109.90,
+    badge: 'Zero Açúcar',
+    image: 'assets/pote_sorvete_zero_1l.jpg',
+    tags: ['sorvetes', 'potes', 'zero'],
+    customizable: false
+  },
+  {
+    id: 'pote-sorvete-1l-premium',
+    category: 'sorvetes',
+    name: 'Pote de Sorvete 1l Premium',
+    description: 'Pote de Sorvete 1l Premium, receitas nobres exclusivas como Caramelo Salgado e ingredientes nobres.',
+    price: 71.90,
+    badge: 'Linha Premium 1L',
+    image: 'assets/pote_sorvete_1l_premium.jpg',
+    tags: ['sorvetes', 'potes'],
+    customizable: false
+  },
+
+  // ==========================================================================
+  // --- 5. SOBREMESAS DA LOJA (CARDÁPIO FÍSICO) ---
+  // ==========================================================================
   {
     id: 'acai-barca',
-    category: 'acai',
+    category: 'sobremesas',
     name: 'Barca Frutos de Goiás (Açaí ou Sorvete)',
-    description: 'Açaí artesanal super cremoso ou sorvete servidos em nossa famosa barca com complementos: Banana, Morango, Manga, Leite Ninho e Leite Condensado.',
+    description: 'Açaí artesanal ou sorvete servidos na famosa barca com Banana, Morango, Manga, Leite Ninho e Leite Condensado.',
     price: 65.90,
-    badge: '⭐ A Famosa Barca',
+    badge: '⭐ Famosa Barca',
     image: 'assets/barca.jpg',
-    tags: ['destaques', 'acai'],
-    customizable: true,
-    sizes: [
-      { name: 'Barca Média', price: 65.90 },
-      { name: 'Barca Grande', price: 87.90 }
-    ],
-    freeComplementsLimit: 5,
-    freeComplements: [
-      'Banana fatiada',
-      'Morango fresco picado',
-      'Manga fresca em pedaços',
-      'Leite em pó (Ninho)',
-      'Leite condensado cremoso'
-    ],
-    paidAdditions: [
-      { name: 'Dose Extra de Nutella Original', price: 6.00 },
-      { name: 'Castanha de Baru Torrada', price: 5.50 },
-      { name: 'Bombom Ouro Branco picado', price: 4.50 },
-      { name: 'Confetes Chocoball', price: 4.00 }
-    ],
-    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate', 'Sem cobertura extra']
+    tags: ['sobremesas', 'destaques', 'acai'],
+    customizable: false
   },
   {
     id: 'acai-taca-tradicional',
-    category: 'acai',
+    category: 'sobremesas',
     name: 'Taça de Açaí Frutos de Goiás',
-    description: 'A mais famosa do Brasil! Escolha o tamanho e os complementos para prepararmos tudo do seu jeito: Banana, Manga, Morango, Granola, Leite em Pó e Leite Condensado.',
+    description: 'A mais famosa do Brasil! Banana, Manga, Morango, Granola, Leite em Pó e Leite Condensado.',
     price: 32.90,
-    badge: '⭐ Mais Famosa do Brasil',
+    badge: 'Mais Famosa do Brasil',
     image: 'assets/taca_acai.jpg',
-    tags: ['destaques', 'acai'],
-    customizable: true,
-    sizes: [
-      { name: 'Taça Média (3 bolas)', price: 32.90 },
-      { name: 'Taça Grande (4 bolas)', price: 38.90 }
-    ],
-    freeComplementsLimit: 6,
-    freeComplements: [
-      'Banana fatiada',
-      'Manga fresca em cubos',
-      'Morango fresco',
-      'Granola crocante',
-      'Leite em Pó (Ninho)',
-      'Leite Condensado'
-    ],
-    paidAdditions: [
-      { name: 'Nutella Original', price: 5.50 },
-      { name: 'Castanha de Baru do Cerrado', price: 5.50 },
-      { name: 'Bombom Ouro Branco', price: 4.50 },
-      { name: 'Tubetes Crocantes', price: 3.50 }
-    ],
-    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate', 'Sem cobertura']
+    tags: ['sobremesas', 'acai'],
+    customizable: false
   },
   {
-    id: 'acai-trufado-especial',
-    category: 'acai',
-    name: 'Taça Açaí Trufado Supremo',
-    description: 'Taça de 500ml com paredes cobertas de Nutella pura, camadas de açaí artesanal, muito leite Ninho e morangos frescos selecionados.',
-    price: 28.90,
-    badge: '👑 Trufado',
-    image: 'assets/taca_acai.jpg',
-    tags: ['destaques', 'acai'],
-    customizable: true,
-    sizes: [
-      { name: 'Taça Trufada 500ml', price: 28.90 },
-      { name: 'Taça Mega Trufada 700ml', price: 36.90 }
-    ],
-    freeComplementsLimit: 2,
-    freeComplements: [
-      'Morangos frescos extras',
-      'Leite Ninho em pó',
-      'Granola',
-      'Gotas de chocolate'
-    ],
-    paidAdditions: [
-      { name: 'Castanha de Baru Nobre', price: 5.50 },
-      { name: 'Bombom Sonho de Valsa', price: 4.50 },
-      { name: 'Ouro Branco picado', price: 4.50 }
-    ],
-    sauces: ['Ganache de Chocolate Belga', 'Leite Condensado', 'Sem calda extra']
-  },
-  {
-    id: 'acai-fit-zero',
-    category: 'acai',
-    name: 'Açaí Fit 100% Puro (Zero Açúcar)',
-    description: 'Polpa de açaí pura sem adição de xarope ou açúcar. Perfeito para quem mantém a dieta ou busca o sabor autêntico e saudável do fruto.',
-    price: 20.90,
-    badge: '🌱 Zero Açúcar',
-    image: 'assets/taca_acai.jpg',
-    tags: ['fit', 'acai'],
-    customizable: true,
-    sizes: [
-      { name: 'Pote Fit 350ml', price: 20.90 },
-      { name: 'Pote Fit 500ml', price: 26.90 }
-    ],
-    freeComplementsLimit: 3,
-    freeComplements: [
-      'Banana fatiada',
-      'Morango fresco picado',
-      'Chia e Linhaça Dourada',
-      'Aveia em flocos finos',
-      'Granola Zero Açúcar'
-    ],
-    paidAdditions: [
-      { name: 'Castanha de Baru (Superalimento do Cerrado)', price: 5.50 },
-      { name: 'Mel puro de abelha silvestre', price: 3.50 },
-      { name: 'Pasta de Amendoim Integral', price: 4.50 },
-      { name: 'Whey Protein Isolado (Dose)', price: 7.00 }
-    ],
-    sauces: ['Sem calda', 'Mel Puro']
-  },
-  {
-    id: 'acai-supreme-barca-familia',
-    category: 'acai',
-    name: 'Mega Barca Supreme (1.3L Para Compartilhar)',
-    description: 'A maior barca da Frutos de Goiás: serve até 4 pessoas! Açaí cremoso, morangos, bananas, uvas sem semente, Ninho, Nutella, KitKat, Ouro Branco e baru.',
-    price: 68.90,
-    badge: '🎉 Família',
-    image: 'assets/barca.jpg',
-    tags: ['acai'],
-    customizable: true,
-    sizes: [
-      { name: 'Mega Barca 1.3 Litros (Até 4 pessoas)', price: 68.90 }
-    ],
-    freeComplementsLimit: 5,
-    freeComplements: [
-      'Morango fresco fatiado',
-      'Banana em rodelas',
-      'Leite Ninho em abundância',
-      'Nutella generosa',
-      'Paçoca triturada',
-      'Granola artesanal crocante',
-      'Gotas de chocolate'
-    ],
-    paidAdditions: [
-      { name: 'Castanha de Baru do Cerrado', price: 5.50 },
-      { name: 'Sorvete Artesanal (1 Bola)', price: 6.00 }
-    ],
-    sauces: ['Leite Condensado', 'Calda de Morango Artesanal', 'Calda de Chocolate']
-  },
-
-  // --- CATEGORIA: SOBREMESAS ESPECIAIS ---
-  {
-    id: 'grand-shake',
+    id: 'grand-shake-especial',
     category: 'sobremesas',
-    name: 'Grand Shake Trufado',
-    description: 'Simmm, com chocolate dentro e fora da taça! Nessa deliciosa sobremesa servida em taça de 500ml coberta por ganache de chocolate e chocoball com 1 Picolé gourmet mergulhado + Bombom Ouro Branco. Escolha o sabor do sorvete (até 2 sabores).',
+    name: 'Grand Shake Trufado Frutos de Goiás 500ml',
+    description: 'Chocolate dentro e fora da taça, ganache, chocoball, 1 Picolé gourmet mergulhado e Bombom Ouro Branco.',
     price: 43.90,
-    badge: '👑 1 Picolé + Bombom',
+    badge: '👑 Grand Shake',
     image: 'assets/grand_shake.jpg',
-    tags: ['destaques', 'sobremesas'],
-    customizable: true,
-    sizes: [
-      { name: 'Taça Especial 500ml', price: 43.90 }
-    ],
-    freeComplementsLimit: 2,
-    freeComplements: [
-      '1º Sabor: Chocolate Belga',
-      '1º Sabor: Morango Artesanal',
-      '1º Sabor: Baunilha Bourbon',
-      '1º Sabor: Ninho Trufado',
-      '1º Sabor: Castanha de Baru (Cerrado)',
-      '2º Sabor: Chocolate Belga',
-      '2º Sabor: Morango Artesanal',
-      '2º Sabor: Baunilha Bourbon',
-      '2º Sabor: Ninho Trufado',
-      '2º Sabor: Castanha de Baru (Cerrado)'
-    ],
-    paidAdditions: [
-      { name: 'Adicionar Picolé Extra', price: 8.00 },
-      { name: 'Farofa crocante de Baru', price: 4.50 },
-      { name: 'Bombom Ouro Branco Extra', price: 4.50 }
-    ],
-    sauces: ['Ganache de Chocolate Belga', 'Cobertura de Morango', 'Morango e Chocolate', 'Sem calda extra']
+    tags: ['sobremesas', 'destaques'],
+    customizable: false
   },
   {
-    id: 'petit-gateau',
-    category: 'sobremesas',
-    name: 'Petit Gateau Supremo',
-    description: 'Delicioso Petit quentinho crocante por fora e gourmet por dentro! 1. Escolha por dentro (banana, morango ou até 2 sabores). Cobertura: Morango e/ou Chocolate.',
-    price: 32.90,
-    badge: '🍫 Quente & Frio',
-    image: 'assets/petit_gateau.jpg',
-    tags: ['destaques', 'sobremesas'],
-    customizable: true,
-    sizes: [
-      { name: 'Porção Individual Completa', price: 32.90 }
-    ],
-    freeComplementsLimit: 2,
-    freeComplements: [
-      'Fruta: Banana fresca',
-      'Fruta: Morango fresco',
-      'Sorvete: Baunilha Bourbon Artesanal',
-      'Sorvete: Creme de Castanha de Baru',
-      'Sorvete: Doce de Leite com Queijo',
-      'Sorvete: Ninho Trufado'
-    ],
-    paidAdditions: [
-      { name: 'Bola Extra de Sorvete', price: 6.50 },
-      { name: 'Morangos frescos extras', price: 4.00 },
-      { name: 'Castanha de Baru triturada', price: 4.50 }
-    ],
-    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate']
-  },
-  {
-    id: 'sorvete-assado',
+    id: 'sorvete-assado-especial',
     category: 'sobremesas',
     name: 'Sorvete Assado Tradicional',
-    description: '• Servido em uma cumbuca recheada com pão de ló. • Dois sabores de sorvete ou açaí. • Duas opções de frutas. Tudo isso coberto em um marshmallow crocante maçaricado (Morango e/ou Chocolate).',
+    description: 'Cumbuca com pão de ló, 2 sabores de sorvete ou açaí, 2 frutas e marshmallow crocante maçaricado.',
     price: 38.90,
     badge: '✨ Receita Exclusiva',
     image: 'assets/sorvete_assado.jpg',
-    tags: ['destaques', 'sobremesas'],
-    customizable: true,
-    sizes: [
-      { name: 'Cumbuca Especial Tradicional', price: 38.90 }
-    ],
-    freeComplementsLimit: 4,
-    freeComplements: [
-      'Fruta 1: Banana fatiada',
-      'Fruta 1: Morango fresco',
-      'Fruta 1: Manga fresca',
-      'Fruta 2: Banana fatiada',
-      'Fruta 2: Morango fresco',
-      'Fruta 2: Manga fresca',
-      'Sorvete: Baunilha Bourbon',
-      'Sorvete: Morango Artesanal',
-      'Sorvete: Castanha de Baru',
-      'Sorvete: Açaí Cremoso'
-    ],
-    paidAdditions: [
-      { name: 'Castanha de Baru crocante', price: 4.50 },
-      { name: 'Morangos frescos extras', price: 4.00 }
-    ],
-    sauces: ['Cobertura de Morango', 'Cobertura de Chocolate', 'Morango e Chocolate', 'Sem cobertura extra']
-  },
-  {
-    id: 'banana-split',
-    category: 'sobremesas',
-    name: 'Banana Split Especial',
-    description: 'Sobremesa servida em uma clássica canoa com bananas frescas e bolas de sorvete. 1. Escolha os 3 sabores de sorvete. 2. Cobertura: Morango e/ou Chocolate.',
-    price: 38.90,
-    badge: '🍌 Clássico na Canoa',
-    image: 'assets/banana_split.jpg',
     tags: ['sobremesas'],
-    customizable: true,
-    sizes: [
-      { name: 'Canoa Completa (3 Bolas)', price: 38.90 }
-    ],
-    freeComplementsLimit: 3,
-    freeComplements: [
-      'Bola 1: Chocolate Belga',
-      'Bola 1: Morango com Pedaços',
-      'Bola 1: Creme de Baru (Cerrado)',
-      'Bola 2: Baunilha Bourbon',
-      'Bola 2: Flocos Artesanal',
-      'Bola 2: Ninho Trufado',
-      'Bola 3: Açaí Cremoso',
-      'Bola 3: Mangaba do Cerrado',
-      'Bola 3: Doce de Leite'
-    ],
-    paidAdditions: [
-      { name: 'Nutella adicional', price: 5.50 },
-      { name: 'Castanha de Baru triturada', price: 4.50 }
-    ],
-    sauces: ['Cobertura de Morango', 'Cobertura de Chocolate', 'Morango e Chocolate']
+    customizable: false
   },
   {
     id: 'sundae-especial',
     category: 'sobremesas',
     name: 'Sundae Frutos de Goiás',
-    description: 'Um clássico que nunca morre com o sabor Frutos de Goiás! 1. Escolha dois sabores de sorvete. 2. Escolha duas frutas (banana, manga ou morango). 3. Cobertura: Morango e/ou Chocolate.',
+    description: 'Um clássico que nunca morre com o sabor Frutos de Goiás. 2 sabores de sorvete, 2 frutas e calda generosa.',
     price: 32.90,
-    badge: '🍨 Clássico da Casa',
+    badge: 'Clássico',
     image: 'assets/sundae.jpg',
     tags: ['sobremesas'],
-    customizable: true,
-    sizes: [
-      { name: 'Taça Sundae (2 Bolas + 2 Frutas)', price: 32.90 }
-    ],
-    freeComplementsLimit: 3,
-    freeComplements: [
-      'Fruta: Banana fresca',
-      'Fruta: Manga em cubos',
-      'Fruta: Morango fresco',
-      'Sorvete: Baunilha Bourbon',
-      'Sorvete: Chocolate Belga',
-      'Sorvete: Morango Artesanal',
-      'Sorvete: Mangaba do Cerrado'
-    ],
-    paidAdditions: [
-      { name: 'Chantilly Extra', price: 3.50 },
-      { name: 'Castanha de Baru', price: 4.50 }
-    ],
-    sauces: ['Cobertura de Morango', 'Cobertura de Chocolate', 'Morango e Chocolate']
+    customizable: false
+  },
+  {
+    id: 'banana-split-artesanal',
+    category: 'sobremesas',
+    name: 'Banana Split Especial',
+    description: 'Sobremesa servida em canoa tradicional com 3 bolas de sorvete, banana fatiada e coberturas.',
+    price: 38.90,
+    badge: 'Tradicional',
+    image: 'assets/banana_split.jpg',
+    tags: ['sobremesas'],
+    customizable: false
+  },
+  {
+    id: 'petit-gateau-supremo',
+    category: 'sobremesas',
+    name: 'Petit Gateau Quentinho',
+    description: 'Delicioso Petit quentinho crocante por fora e cremoso por dentro, bola de sorvete artesanal e calda.',
+    price: 38.90,
+    badge: '🍫 Quente & Frio',
+    image: 'assets/petit_gateau.jpg',
+    tags: ['sobremesas'],
+    customizable: false
+  },
+  {
+    id: 'milk-shake-tradicional',
+    category: 'sobremesas',
+    name: 'Milk Shake Frutos de Goiás',
+    description: 'Cremoso e refrescante servido na taça! Escolha o sabor do sorvete artesanal e coberturas.',
+    price: 27.90,
+    badge: 'Super Cremoso',
+    image: 'assets/milk_shake.jpg',
+    tags: ['sobremesas'],
+    customizable: false
   },
   {
     id: 'bolo-na-taca',
     category: 'sobremesas',
-    name: 'Bolo na Taça Brownie Supremo',
-    description: 'Delicioso brownie quentinho na taça com Morango fresco, Confete, chocoball, Leite em Pó e cobertura de morango e/ou chocolate.',
-    price: 32.90,
-    badge: '🍰 Brownie Quentinho',
+    name: 'Bolo na Taça Brownie Especial',
+    description: 'Delicioso brownie quentinho na taça com Morango, Confete Chocoball, Leite em Pó e cobertura.',
+    price: 65.90,
+    badge: 'Brownie na Taça',
     image: 'assets/bolo_taca.jpg',
     tags: ['sobremesas'],
-    customizable: true,
-    sizes: [
-      { name: 'Taça Brownie Especial', price: 32.90 }
-    ],
-    freeComplementsLimit: 3,
-    freeComplements: [
-      'Morangos frescos',
-      'Confetes Chocoball',
-      'Leite em Pó (Ninho)',
-      'Sorvete de Baunilha',
-      'Sorvete de Ninho Trufado'
-    ],
-    paidAdditions: [
-      { name: 'Nutella na borda', price: 5.00 },
-      { name: 'Morangos frescos extras', price: 4.00 }
-    ],
-    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate']
-  },
-
-  // --- CATEGORIA: MILK SHAKES & VITAMINAS ---
-  {
-    id: 'milk-shake-tradicional',
-    category: 'shakes',
-    name: 'Milk Shake Frutos de Goiás',
-    description: 'Cremoso e refrescante servido na taça! 1. Escolha o sabor do sorvete artesanal. 2. Escolha a cobertura: Morango e/ou Chocolate.',
-    price: 27.90,
-    badge: '🥤 Super Cremoso',
-    image: 'assets/milk_shake.jpg',
-    tags: ['destaques', 'shakes'],
-    customizable: true,
-    sizes: [
-      { name: 'Médio', price: 27.90 },
-      { name: 'Grande', price: 32.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Sorvete de Açaí Cremoso',
-      'Sorvete de Baunilha Bourbon',
-      'Sorvete de Chocolate Belga',
-      'Sorvete de Morango Artesanal',
-      'Sorvete de Ninho Trufado',
-      'Sorvete de Castanha de Baru'
-    ],
-    paidAdditions: [
-      { name: 'Chantilly Tradicional Extra', price: 3.50 },
-      { name: 'Ovomaltine Crocante no Topo', price: 3.50 },
-      { name: 'Borda com Nutella Pura', price: 5.00 }
-    ],
-    sauces: ['Cobertura de Chocolate', 'Cobertura de Morango', 'Morango e Chocolate', 'Sem cobertura']
-  },
-  {
-    id: 'shake-ovomaltine',
-    category: 'shakes',
-    name: 'Milk Shake Ovomaltine Crocante 500ml',
-    description: 'O clássico mais amado: sorvete cremoso de baunilha batido com bastante Ovomaltine suíço, calda de chocolate e pedacinhos crocantes.',
-    price: 21.90,
-    badge: 'Crocante',
-    image: 'assets/milk_shake.jpg',
-    tags: ['shakes'],
-    customizable: true,
-    sizes: [
-      { name: 'Copo 500ml', price: 21.90 },
-      { name: 'Copo Mega 700ml', price: 27.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Com Chantilly tradicional',
-      'Sem Chantilly (só o shake puro)'
-    ],
-    paidAdditions: [
-      { name: 'Ovomaltine Crocante Extra no topo', price: 3.50 },
-      { name: 'Borda com Nutella', price: 5.00 }
-    ],
-    sauces: ['Calda de Chocolate', 'Sem calda']
-  },
-  {
-    id: 'shake-ninho-nutella',
-    category: 'shakes',
-    name: 'Milk Shake Ninho com Nutella 500ml',
-    description: 'Bordas lambuzadas com pura Nutella, batido com sorvete artesanal de leite Ninho e finalizado com leite condensado e ninho polvilhado.',
-    price: 23.90,
-    badge: '👑 Campeão de Pedidos',
-    image: 'assets/milk_shake.jpg',
-    tags: ['destaques', 'shakes'],
-    customizable: true,
-    sizes: [
-      { name: 'Copo 500ml', price: 23.90 },
-      { name: 'Copo Mega 700ml', price: 29.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Com Chantilly',
-      'Sem Chantilly'
-    ],
-    paidAdditions: [
-      { name: 'Nutella Extra no recheio', price: 5.50 },
-      { name: 'Morangos frescos batidos juntos', price: 4.50 }
-    ],
-    sauces: ['Nutella', 'Calda de Chocolate']
-  },
-  {
-    id: 'shake-cerrado-baru',
-    category: 'shakes',
-    name: 'Milk Shake Especial Castanha de Baru do Cerrado',
-    description: 'Uma criação exclusiva da Frutos de Goiás: sorvete de baru nobre batido com doce de leite caseiro e finalizado com farofa de baru torrada.',
-    price: 24.90,
-    badge: '🌿 Exclusivo do Cerrado',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80',
-    tags: ['cerrado', 'shakes'],
-    customizable: true,
-    sizes: [
-      { name: 'Copo 500ml', price: 24.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Com Chantilly & Farofa de Baru',
-      'Sem Chantilly'
-    ],
-    paidAdditions: [
-      { name: 'Castanha de Baru Extra', price: 5.50 }
-    ],
-    sauces: ['Doce de Leite Cremoso', 'Calda de Caramelo Toffee']
-  },
-  {
-    id: 'vitamina-acai-banana',
-    category: 'shakes',
-    name: 'Vitamina de Açaí com Banana & Guaraná 500ml',
-    description: 'Vitamina revigorante e energética batida com açaí artesanal, banana madura, xarope de guaraná e leite geladinho.',
-    price: 18.90,
-    badge: '⚡ Energia Pura',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80',
-    tags: ['shakes'],
-    customizable: true,
-    sizes: [
-      { name: 'Copo 500ml', price: 18.90 },
-      { name: 'Copo 700ml', price: 23.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Com leite integral',
-      'Com água (estilo smoothie)',
-      'Com leite vegetal / sem lactose (+R$ 2,50)'
-    ],
-    paidAdditions: [
-      { name: 'Dose de Aveia & Chia', price: 3.00 },
-      { name: 'Mel Silvestre', price: 3.50 },
-      { name: 'Paçoca triturada', price: 3.00 }
-    ],
-    sauces: ['Sem calda']
-  },
-  {
-    id: 'vitamina-cerrado-cupuacu',
-    category: 'shakes',
-    name: 'Vitamina Tropical Açaí com Cupuaçu',
-    description: 'O contraste perfeito entre o sabor aveludado do açaí e a acidez aromática do cupuaçu. Uma delícia refrescante e cheia de antioxidantes.',
-    price: 20.90,
-    badge: '🌿 Frutas Nativas',
-    image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80',
-    tags: ['cerrado', 'shakes'],
-    customizable: true,
-    sizes: [
-      { name: 'Copo 500ml', price: 20.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Com leite integral',
-      'Com água mineral'
-    ],
-    paidAdditions: [
-      { name: 'Mel puro de abelha', price: 3.50 },
-      { name: 'Granola artesanal crocante', price: 3.00 }
-    ],
-    sauces: ['Sem calda']
-  },
-
-  // --- CATEGORIA: POTES DE SORVETE (TRADIÇÃO & CERRADO) ---
-  {
-    id: 'pote-cerrado-1l',
-    category: 'potes-cerrado',
-    name: 'Pote 1 Litro - Sabores Autênticos do Cerrado',
-    description: 'Leve para casa os sabores raros e premiados da Frutos de Goiás! Feito com polpa pura das frutas do Cerrado brasileiro.',
-    price: 44.90,
-    badge: '🌿 Tradição Goiana',
-    image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80',
-    tags: ['cerrado', 'destaques', 'potes'],
-    customizable: true,
-    sizes: [
-      { name: 'Pote 1 Litro', price: 44.90 },
-      { name: 'Pote 1.5 Litros (Família)', price: 59.90 },
-      { name: 'Pote 2 Litros (Festa)', price: 74.90 }
-    ],
-    freeComplementsLimit: 2,
-    freeComplements: [
-      'Castanha de Baru (Cremoso e marcante)',
-      'Pequi Nobre (O autêntico sabor goiano)',
-      'Mangaba (Aroma floral doce e aveludado)',
-      'Cajá (Refrescante e tropical)',
-      'Buriti (Sabor rústico e cor vibrante)',
-      'Cupuaçu (Cremosidade pura com toque cítrico)',
-      'Murici (Tradição do interior goiano)'
-    ],
-    paidAdditions: [
-      { name: 'Pacote com 6 Casquinhas Crocantes Artesanais', price: 6.90 },
-      { name: 'Pote de Calda Artesanal de Caramelo (100ml)', price: 6.50 },
-      { name: 'Pote de Farofa de Baru Tostada (100g)', price: 9.90 }
-    ],
-    sauces: ['Embalado em bolsa térmica para garantir a temperatura']
-  },
-  {
-    id: 'pote-tradicional-1l',
-    category: 'potes-cerrado',
-    name: 'Pote 1 Litro - Sabores Clássicos & Especiais',
-    description: 'Nossos sorvetes artesanais tradicionais preparados com ingredientes selecionados, textura aveludada e baixíssimo teor de gordura hidrogenada.',
-    price: 39.90,
-    badge: 'Super Cremoso',
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80',
-    tags: ['potes'],
-    customizable: true,
-    sizes: [
-      { name: 'Pote 1 Litro', price: 39.90 },
-      { name: 'Pote 1.5 Litros', price: 54.90 },
-      { name: 'Pote 2 Litros', price: 67.90 }
-    ],
-    freeComplementsLimit: 2,
-    freeComplements: [
-      'Chocolate Belga Intenso',
-      'Ninho Trufado com Ganache',
-      'Flocos Crocantes',
-      'Morango com Pedaços Reais da Fruta',
-      'Baunilha Bourbon Especial',
-      'Doce de Leite com Queijo Minas',
-      'Torta de Limão com Biscoito',
-      'Pistache Suave'
-    ],
-    paidAdditions: [
-      { name: 'Kit 6 Casquinhas Crocantes', price: 6.90 },
-      { name: 'Pote Calda de Chocolate Belga (100ml)', price: 6.50 }
-    ],
-    sauces: ['Embalado para entrega sem descongelar']
-  },
-  {
-    id: 'pote-acai-1l',
-    category: 'potes-cerrado',
-    name: 'Pote de Açaí Cremoso Puro 1 Litro',
-    description: 'Pote térmico com 1 Litro do açaí puro Frutos de Goiás pronto para você servir como quiser em casa.',
-    price: 36.90,
-    badge: 'Açaí Puro',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80',
-    tags: ['acai', 'potes'],
-    customizable: true,
-    sizes: [
-      { name: 'Pote 1 Litro', price: 36.90 },
-      { name: 'Pote 2 Litros (Super Econômico)', price: 62.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Tradicional Cremoso com Xarope Suave',
-      'Zero Adição de Açúcar (Fit)'
-    ],
-    paidAdditions: [
-      { name: 'Pacote de Granola Artesanal 200g', price: 7.50 },
-      { name: 'Pote de Leite Ninho 150g', price: 8.00 },
-      { name: 'Pote de Nutella 140g', price: 12.00 }
-    ],
-    sauces: ['Sem calda inclusa']
-  },
-
-  // --- CATEGORIA: PICOLÉS ARTESANAIS ---
-  {
-    id: 'picole-fruta-cerrado',
-    category: 'picoles',
-    name: 'Picolé Frutas do Cerrado 100% Natural',
-    description: 'Feito com polpa pura da fruta e água mineral. Super refrescante, vegano e sem leite. Sabores: Cajá, Mangaba, Pequi, Tamarindo, Açaí e Graviola.',
-    price: 7.50,
-    badge: '🌿 100% Fruta',
-    image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80',
-    tags: ['cerrado', 'fit', 'picoles'],
-    customizable: true,
-    sizes: [
-      { name: 'Unidade Individual', price: 7.50 },
-      { name: 'Combo 5 Picolés de Fruta', price: 34.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Sabor: Cajá Puro',
-      'Sabor: Mangaba do Cerrado',
-      'Sabor: Pequi Tradicional',
-      'Sabor: Tamarindo Azedinho',
-      'Sabor: Açaí Puro',
-      'Sabor: Cupuaçu Refrescante'
-    ],
-    paidAdditions: [
-      { name: 'Bolsa Térmica Pequena para Transporte', price: 4.00 }
-    ],
-    sauces: ['Enviado em embalagem térmica com gelo']
-  },
-  {
-    id: 'picole-ao-leite',
-    category: 'picoles',
-    name: 'Picolé Cremoso ao Leite',
-    description: 'Cremoso, sabor marcante e com ingredientes de verdade. Sabores: Ninho Trufado, Milho Verde com Canela, Coco Queimado, Doce de Leite.',
-    price: 8.50,
-    badge: 'Cremoso',
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80',
-    tags: ['picoles'],
-    customizable: true,
-    sizes: [
-      { name: 'Unidade Individual', price: 8.50 },
-      { name: 'Combo 5 Picolés ao Leite', price: 39.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Sabor: Ninho Trufado',
-      'Sabor: Milho Verde',
-      'Sabor: Doce de Leite Goiano',
-      'Sabor: Coco Queimado',
-      'Sabor: Castanha de Baru'
-    ],
-    paidAdditions: [
-      { name: 'Bolsa Térmica Pequena', price: 4.00 }
-    ],
-    sauces: ['Enviado geladinho']
-  },
-  {
-    id: 'picole-gourmet-recheado',
-    category: 'picoles',
-    name: 'Picolé Gourmet Super Recheado',
-    description: 'Nossa linha de picolés com recheio cremoso e casquinha de chocolate. Açaí com Leite Condensado ou Chocolate Belga com Brigadeiro.',
-    price: 11.90,
-    badge: '👑 Recheado',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80',
-    tags: ['destaques', 'picoles'],
-    customizable: true,
-    sizes: [
-      { name: 'Unidade Individual', price: 11.90 },
-      { name: 'Combo 3 Picolés Recheados', price: 32.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Açaí Recheado com Leite Condensado',
-      'Chocolate Belga com Brigadeiro Mole',
-      'Torta de Limão com Biscoito',
-      'Morango Recheado com Leite Moça'
-    ],
-    paidAdditions: [
-      { name: 'Bolsa Térmica para Transporte', price: 4.00 }
-    ],
-    sauces: ['Entregue intacto']
-  },
-  {
-    id: 'kit-degustacao-cerrado',
-    category: 'picoles',
-    name: 'Kit Degustação: 10 Picolés do Cerrado',
-    description: 'Um passeio sensorial completo pelos tesouros de Goiás: 10 picolés com os sabores mais marcantes do Cerrado em caixa térmica para presente.',
-    price: 69.90,
-    badge: '🎁 Campeão para Família',
-    image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80',
-    tags: ['cerrado', 'destaques', 'picoles'],
-    customizable: true,
-    sizes: [
-      { name: 'Caixa Térmica com 10 Picolés Variados', price: 69.90 }
-    ],
-    freeComplementsLimit: 1,
-    freeComplements: [
-      'Mix Padrão: 2 Pequi, 2 Baru, 2 Mangaba, 2 Cajá, 1 Cupuaçu e 1 Buriti',
-      'Personalizar sabores nas observações'
-    ],
-    paidAdditions: [
-      { name: 'Cartão de Presente Personalizado', price: 3.00 }
-    ],
-    sauces: ['Embalagem Térmica Especial Inclusa']
+    customizable: false
   }
 ];
 
@@ -829,15 +514,23 @@ function renderProducts() {
   // Filtragem
   let filtered = PRODUCTS_DATA.filter(product => {
     // Categoria
-    if (currentCategory !== 'all' && product.category !== currentCategory) {
-      return false;
+    if (currentCategory !== 'all') {
+      if (currentCategory === 'potes') {
+        if (!product.tags.includes('potes') && product.category !== 'potes') return false;
+      } else if (currentCategory === 'zero') {
+        if (!product.tags.includes('zero') && product.category !== 'zero') return false;
+      } else if (product.category !== currentCategory) {
+        return false;
+      }
     }
 
     // Tag Filter
     if (currentTagFilter !== 'all') {
       if (currentTagFilter === 'destaques' && !product.tags.includes('destaques')) return false;
-      if (currentTagFilter === 'cerrado' && !product.tags.includes('cerrado')) return false;
-      if (currentTagFilter === 'fit' && !product.tags.includes('fit')) return false;
+      if (currentTagFilter === 'zero' && !product.tags.includes('zero')) return false;
+      if (currentTagFilter === 'combos' && product.category !== 'combos') return false;
+      if (currentTagFilter === 'potes' && !product.tags.includes('potes')) return false;
+      if (currentTagFilter === 'fit' && !product.tags.includes('zero') && !product.tags.includes('fit')) return false;
       if (currentTagFilter === 'sobremesas' && product.category !== 'sobremesas') return false;
     }
 
@@ -909,13 +602,16 @@ function handleImageFallback(imgElement, productName) {
 
 function getCategoryName(cat) {
   const map = {
-    'acai': 'Açaí & Barcas',
-    'sobremesas': 'Sobremesas Especiais',
-    'shakes': 'Milk Shakes & Vitaminas',
-    'potes-cerrado': 'Potes do Cerrado & Tradicionais',
-    'picoles': 'Picolés Artesanais'
+    'acai': 'Açaí',
+    'picoles': 'Picolés e Paletas',
+    'combos': 'Combos de Picolés',
+    'sorvetes': 'Sorvetes',
+    'potes': 'Potes para Compartilhar',
+    'zero': 'Zero Açúcar & Diet',
+    'sobremesas': 'Sobremesas da Loja',
+    'shakes': 'Milk Shakes'
   };
-  return map[cat] || 'Cardápio';
+  return map[cat] || 'Frutos de Goiás';
 }
 
 function selectCategory(catKey) {

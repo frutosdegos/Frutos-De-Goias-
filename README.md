@@ -22,7 +22,7 @@ Website moderno, responsivo e mobile-first desenvolvido especialmente para a **F
 ### 1. Seletor Inteligente de Unidade
 - Alternância imediata no topo do site e dentro do carrinho entre:
   - **Unidade 01: Santa Luzia (R. Jaime Carlos Afonso Teixeira, 66 - Bela Vista)** • WhatsApp: `(31) 99580-9341` • Horário: Até às 21:00
-  - **Unidade 02: São Benedito (Av. Brasília, 1858)** • WhatsApp: `(31) 99955-5848` • Horário: Até às 23:00
+  - **Unidade 02: São Benedito (Av. Brasília, 1858)** • WhatsApp: `(31) 99955-5848` • Horário: 10:00 às 21:00
 - O pedido é direcionado automaticamente para o número de WhatsApp da unidade selecionada.
 
 ### 2. Destaques da Casa (Campeões de Pedidos)

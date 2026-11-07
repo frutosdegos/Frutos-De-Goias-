@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -232,7 +232,7 @@
           <div class="unit-quick-info">
             <span class="unit-badge">Unidade 2</span>
             <h3>São Benedito</h3>
-            <p>Av. Brasília, 1858 • Aberto hoje até 23:00</p>
+            <p>Av. Brasília, 1858 • Aberto hoje até 21:00 (10:00 às 21:00)</p>
           </div>
           <button class="unit-select-btn" onclick="changeStoreUnit('sao-benedito')">Selecionar</button>
         </div>
@@ -250,23 +250,49 @@
       </div>
 
       <div class="destaques-grid">
-        <!-- Card 1: Barca de Açaí -->
-        <div class="product-card card-destaque" data-product-id="acai-barca">
-          <div class="product-card-badge ribbon-hot">⭐ A Famosa Barca</div>
+        <!-- Card 1: Açaí Premium Completo -->
+        <div class="product-card card-destaque" data-product-id="acai-premium-sorvete-480">
+          <div class="product-card-badge ribbon-hot">👑 Campeão de Pedidos</div>
           <div class="product-image-wrap">
-            <img src="assets/barca.jpg" alt="Barca de Açaí Completa" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Barca de Açaí')">
+            <img src="assets/acai_premium_copo.jpg" alt="Açaí Premium com Complementos" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Açaí Premium Completo')">
           </div>
           <div class="product-content">
-            <span class="product-category-tag">Açaí & Sorvete</span>
-            <h3 class="product-title">Barca Frutos de Goiás</h3>
-            <p class="product-desc">Açaí ou sorvete servidos em nossa famosa barca com Banana, Morango, Manga, Leite Ninho e Leite Condensado.</p>
+            <span class="product-category-tag">Açaí Premium</span>
+            <h3 class="product-title">Açaí Premium 480ml</h3>
+            <p class="product-desc">Com opção de sorvete, escolha 4 sabores da sua preferência com complementos gratuitos inclusos.</p>
             <div class="product-meta">
-              <span class="product-portion">Tamanhos: Média e Grande</span>
+              <span class="product-portion">Copo 480ml • Super Recheado</span>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-price">
+                <small>Valor</small>
+                <strong>R$ 44,90</strong>
+              </div>
+              <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
+                <span>Pedir no iFood</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Pote de Sorvete 1,5L -->
+        <div class="product-card card-destaque" data-product-id="pote-sorvete-15l">
+          <div class="product-card-badge ribbon-luxo">🍦 Pote Família 1,5L</div>
+          <div class="product-image-wrap">
+            <img src="assets/pote_sorvete_15l.jpg" alt="Pote de Sorvete 1,5L" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Pote de Sorvete 1,5L')">
+          </div>
+          <div class="product-content">
+            <span class="product-category-tag">Sorvetes Nobres</span>
+            <h3 class="product-title">Pote Sorvete 1,5L Tradicional/Premium</h3>
+            <p class="product-desc">Pote de 1,5 Litros de sorvete tradicional e premium (Ninho Trufado e outros). Perfeito para compartilhar.</p>
+            <div class="product-meta">
+              <span class="product-portion">Pote Família 1,5 Litros</span>
             </div>
             <div class="product-card-footer">
               <div class="product-price">
                 <small>A partir de</small>
-                <strong>R$ 65,90</strong>
+                <strong>R$ 79,90</strong>
               </div>
               <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
                 <span>Pedir no iFood</span>
@@ -276,23 +302,23 @@
           </div>
         </div>
 
-        <!-- Card 2: Grand Shake Trufado -->
-        <div class="product-card card-destaque" data-product-id="grand-shake">
-          <div class="product-card-badge ribbon-luxo">👑 1 Picolé + Bombom</div>
+        <!-- Card 3: Combo 12 Picolés Tradicionais -->
+        <div class="product-card card-destaque" data-product-id="combo-12-picoles-tradicionais">
+          <div class="product-card-badge ribbon-warm">📦 Mais Econômico</div>
           <div class="product-image-wrap">
-            <img src="assets/grand_shake.jpg" alt="Grand Shake Trufado" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Grand Shake Trufado')">
+            <img src="assets/picoles_tradicionais_leite.jpg" alt="Combo 12 Picolés Tradicionais" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Combo 12 Picolés')">
           </div>
           <div class="product-content">
-            <span class="product-category-tag">Sobremesa na Taça</span>
-            <h3 class="product-title">Grand Shake Trufado</h3>
-            <p class="product-desc">Taça de 500ml com ganache e chocoball na borda, até 2 sabores de sorvete, 1 Picolé gourmet mergulhado e Bombom Ouro Branco.</p>
+            <span class="product-category-tag">Combos Promocionais</span>
+            <h3 class="product-title">Combo 12 Picolés Tradicionais</h3>
+            <p class="product-desc">Escolha 12 sabores de picolés tradicionais a base de água e zero lactose com um super desconto exclusivo.</p>
             <div class="product-meta">
-              <span class="product-portion">Servido em taça de 500ml</span>
+              <span class="product-portion">12 Picolés • Super Desconto</span>
             </div>
             <div class="product-card-footer">
               <div class="product-price">
                 <small>Valor</small>
-                <strong>R$ 43,90</strong>
+                <strong>R$ 109,90</strong>
               </div>
               <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
                 <span>Pedir no iFood</span>
@@ -302,49 +328,23 @@
           </div>
         </div>
 
-        <!-- Card 3: Petit Gateau Supremo -->
-        <div class="product-card card-destaque" data-product-id="petit-gateau">
-          <div class="product-card-badge ribbon-warm">🍫 Quente & Frio</div>
+        <!-- Card 4: Paletas Recheadas Artesanais -->
+        <div class="product-card card-destaque" data-product-id="paletas-recheadas">
+          <div class="product-card-badge ribbon-gold">✨ Super Recheada</div>
           <div class="product-image-wrap">
-            <img src="assets/petit_gateau.jpg" alt="Petit Gateau com Sorvete Artesanal" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Petit Gateau Supremo')">
+            <img src="assets/paletas_recheadas.jpg" alt="Paletas Recheadas" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Paletas Recheadas')">
           </div>
           <div class="product-content">
-            <span class="product-category-tag">Sobremesa Especial</span>
-            <h3 class="product-title">Petit Gateau Supremo</h3>
-            <p class="product-desc">Delicioso Petit quentinho crocante por fora e gourmet por dentro! Acompanha bola de sorvete artesanal, frutas e cobertura.</p>
+            <span class="product-category-tag">Picolés & Paletas</span>
+            <h3 class="product-title">Paletas Recheadas Artesanais</h3>
+            <p class="product-desc">Verdadeiras paletas mexicanas com recheio cremoso farto, como Morango com Leite Condensado.</p>
             <div class="product-meta">
-              <span class="product-portion">Acompanha sorvete e calda</span>
+              <span class="product-portion">A partir de R$ 25,90</span>
             </div>
             <div class="product-card-footer">
               <div class="product-price">
-                <small>Valor</small>
-                <strong>R$ 32,90</strong>
-              </div>
-              <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
-                <span>Pedir no iFood</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: Sorvete Assado -->
-        <div class="product-card card-destaque" data-product-id="sorvete-assado">
-          <div class="product-card-badge ribbon-gold">✨ Receita Exclusiva</div>
-          <div class="product-image-wrap">
-            <img src="assets/sorvete_assado.jpg" alt="Sorvete Assado Tradicional" class="product-img" loading="lazy" onerror="handleImageFallback(this, 'Sorvete Assado Tradicional')">
-          </div>
-          <div class="product-content">
-            <span class="product-category-tag">Sobremesa Especial</span>
-            <h3 class="product-title">Sorvete Assado Tradicional</h3>
-            <p class="product-desc">Cumbuca recheada com pão de ló, 2 sabores de sorvete ou açaí, 2 frutas e marshmallow crocante maçaricado.</p>
-            <div class="product-meta">
-              <span class="product-portion">Experiência única e inesquecível</span>
-            </div>
-            <div class="product-card-footer">
-              <div class="product-price">
-                <small>Valor</small>
-                <strong>R$ 38,90</strong>
+                <small>A partir de</small>
+                <strong>R$ 25,90</strong>
               </div>
               <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
                 <span>Pedir no iFood</span>
@@ -451,9 +451,10 @@
         <div class="tag-filters">
           <button class="filter-pill active" onclick="filterByTag('all', this)">Todos</button>
           <button class="filter-pill" onclick="filterByTag('destaques', this)">⭐ Mais Pedidos</button>
-          <button class="filter-pill" onclick="filterByTag('cerrado', this)">🌿 Frutos do Cerrado</button>
-          <button class="filter-pill" onclick="filterByTag('fit', this)">🌱 Opção Fit / Zero Açúcar</button>
-          <button class="filter-pill" onclick="filterByTag('sobremesas', this)">🍮 Sobremesas Quentes</button>
+          <button class="filter-pill" onclick="filterByTag('combos', this)">📦 Combos Econômicos</button>
+          <button class="filter-pill" onclick="filterByTag('potes', this)">🍦 Potes Família</button>
+          <button class="filter-pill" onclick="filterByTag('zero', this)">🌱 Zero Açúcar & Diet</button>
+          <button class="filter-pill" onclick="filterByTag('sobremesas', this)">🍮 Sobremesas da Loja</button>
         </div>
       </div>
 
@@ -466,23 +467,31 @@
           </button>
           <button class="category-tab" data-cat="acai" onclick="selectCategory('acai')">
             <span class="cat-icon">🍧</span>
-            <span class="cat-name">Açaí & Barcas</span>
-          </button>
-          <button class="category-tab" data-cat="sobremesas" onclick="selectCategory('sobremesas')">
-            <span class="cat-icon">🍨</span>
-            <span class="cat-name">Sobremesas Especiais</span>
-          </button>
-          <button class="category-tab" data-cat="shakes" onclick="selectCategory('shakes')">
-            <span class="cat-icon">🥤</span>
-            <span class="cat-name">Milk Shakes & Vitaminas</span>
-          </button>
-          <button class="category-tab" data-cat="potes-cerrado" onclick="selectCategory('potes-cerrado')">
-            <span class="cat-icon">🍦</span>
-            <span class="cat-name">Potes para Viagem</span>
+            <span class="cat-name">Açaí</span>
           </button>
           <button class="category-tab" data-cat="picoles" onclick="selectCategory('picoles')">
             <span class="cat-icon">🍡</span>
-            <span class="cat-name">Picolés Artesanais</span>
+            <span class="cat-name">Picolés & Paletas</span>
+          </button>
+          <button class="category-tab" data-cat="combos" onclick="selectCategory('combos')">
+            <span class="cat-icon">📦</span>
+            <span class="cat-name">Combos de Picolés</span>
+          </button>
+          <button class="category-tab" data-cat="sorvetes" onclick="selectCategory('sorvetes')">
+            <span class="cat-icon">🍨</span>
+            <span class="cat-name">Sorvetes</span>
+          </button>
+          <button class="category-tab" data-cat="potes" onclick="selectCategory('potes')">
+            <span class="cat-icon">🍦</span>
+            <span class="cat-name">Potes para Compartilhar</span>
+          </button>
+          <button class="category-tab" data-cat="zero" onclick="selectCategory('zero')">
+            <span class="cat-icon">🌱</span>
+            <span class="cat-name">Zero Açúcar & Diet</span>
+          </button>
+          <button class="category-tab" data-cat="sobremesas" onclick="selectCategory('sobremesas')">
+            <span class="cat-icon">👑</span>
+            <span class="cat-name">Sobremesas da Loja</span>
           </button>
         </div>
       </div>
@@ -627,7 +636,7 @@
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               <div>
                 <strong>Horário de Funcionamento:</strong>
-                <p>Segunda a Domingo: 12:00 às 23:00</p>
+                <p>Segunda a Domingo: 10:00 às 21:00</p>
               </div>
             </div>
 
@@ -674,11 +683,12 @@
       <div class="footer-col">
         <h4 class="footer-col-title">Cardápio Rápido</h4>
         <ul class="footer-links">
-          <li><a href="javascript:void(0)" onclick="selectCategory('acai')">Açaí na Taça & Barcas</a></li>
-          <li><a href="javascript:void(0)" onclick="selectCategory('sobremesas')">Grand Shake & Sobremesas</a></li>
-          <li><a href="javascript:void(0)" onclick="selectCategory('shakes')">Milk Shakes & Vitaminas</a></li>
-          <li><a href="javascript:void(0)" onclick="selectCategory('potes-cerrado')">Potes do Cerrado (Pequi, Baru...)</a></li>
-          <li><a href="javascript:void(0)" onclick="selectCategory('picoles')">Picolés Artesanais</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('acai')">Açaí Premium & Copos</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('picoles')">Picolés & Paletas</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('combos')">Combos de Picolés</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('sorvetes')">Sorvetes Nobres</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('potes')">Potes para Compartilhar</a></li>
+          <li><a href="javascript:void(0)" onclick="selectCategory('zero')">Zero Açúcar & Diet</a></li>
         </ul>
       </div>
 
@@ -701,7 +711,7 @@
         <p class="footer-hours">
           Segunda a Domingo<br>
           <strong>Aberto até às 21:00</strong> (Santa Luzia)<br>
-          <strong>12:00 às 23:00</strong> (São Benedito)
+          <strong>10:00 às 21:00</strong> (São Benedito)
         </p>
         <div class="payment-methods-strip">
           <span>Formas de Pagamento:</span>
