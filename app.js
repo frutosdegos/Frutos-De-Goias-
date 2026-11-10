@@ -1,4 +1,4 @@
-﻿/**
+/**
  * FRUTOS DE GOIÁS - UNIDADES SANTA LUZIA & SÃO BENEDITO
  * Sistema de E-Commerce & Cardápio Digital Interativo
  */
@@ -570,10 +570,6 @@ function renderProducts() {
               <small>${product.sizes && product.sizes.length > 1 ? 'A partir de' : 'Valor'}</small>
               <strong>R$ ${product.price.toFixed(2).replace('.', ',')}</strong>
             </div>
-            <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood('${product.id}')" title="Pedir no iFood">
-              <span>Pedir no iFood</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
           </div>
         </div>
       </div>

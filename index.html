@@ -179,7 +179,6 @@
               <p>Banana, Morango, Manga, Ninho e Leite Condensado</p>
               <div class="floating-card-footer">
                 <span class="price-tag">A partir de R$ 65,90</span>
-                <button class="mini-order-btn mini-ifood-btn" onclick="redirectToIfood('acai-barca')" aria-label="Pedir no iFood">Pedir no iFood 🛵</button>
               </div>
             </div>
           </div>
@@ -268,10 +267,6 @@
                 <small>Valor</small>
                 <strong>R$ 44,90</strong>
               </div>
-              <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
-                <span>Pedir no iFood</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-              </button>
             </div>
           </div>
         </div>
@@ -294,10 +289,6 @@
                 <small>A partir de</small>
                 <strong>R$ 79,90</strong>
               </div>
-              <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
-                <span>Pedir no iFood</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-              </button>
             </div>
           </div>
         </div>
@@ -320,10 +311,6 @@
                 <small>Valor</small>
                 <strong>R$ 109,90</strong>
               </div>
-              <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
-                <span>Pedir no iFood</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-              </button>
             </div>
           </div>
         </div>
@@ -346,10 +333,6 @@
                 <small>A partir de</small>
                 <strong>R$ 25,90</strong>
               </div>
-              <button class="btn btn-ifood-card btn-sm btn-pedir" onclick="redirectToIfood()">
-                <span>Pedir no iFood</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-              </button>
             </div>
           </div>
         </div>
@@ -736,55 +719,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Floating iFood Bar (Sticky Bottom Bar) -->
-  <div class="mobile-floating-cart-bar ifood-floating-bar" id="mobileCartBar" onclick="redirectToIfood()" style="display: flex;">
-    <div class="floating-cart-left">
-      <div class="floating-cart-badge-icon" style="background: rgba(255,255,255,0.25);">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-      </div>
-      <div class="floating-cart-text">
-        <span class="floating-cart-label" style="color: rgba(255,255,255,0.9);">Delivery Frutos de Goiás</span>
-        <span class="floating-cart-price" style="color: #fff; font-size: 0.95rem;">Peça Agora pelo iFood</span>
-      </div>
-    </div>
-    <div class="floating-cart-right">
-      <span class="ifood-btn-pill">Pedir no iFood 🛵</span>
-    </div>
-  </div>
-
-  <!-- Product Customizer Modal (Montador de Produto) -->
-  <div class="modal-overlay" id="customizerModalOverlay">
-    <div class="modal-card customizer-modal" role="dialog" aria-modal="true">
-      <button class="modal-close-btn" onclick="closeProductCustomizer()" aria-label="Fechar">✕</button>
-
-      <div class="customizer-header" id="customizerHeader">
-        <div class="customizer-img-wrap">
-          <img src="" id="customizerImg" alt="Imagem do produto" class="customizer-img">
-        </div>
-        <div class="customizer-title-area">
-          <span class="customizer-cat-tag" id="customizerCategory">Açaí Especial</span>
-          <h2 class="customizer-name" id="customizerTitle">Nome do Produto</h2>
-          <p class="customizer-description" id="customizerDesc">Descrição completa do item.</p>
-          <div class="customizer-base-price">
-            <span class="price-currency">R$</span>
-            <span class="price-val" id="customizerBasePrice">0,00</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="customizer-body" id="customizerOptionsBody">
-        <!-- Dynamically filled: Tamanhos, Complementos Inclusos, Adicionais Pagos, Coberturas, Observações -->
-      </div>
-
-      <div class="customizer-footer">
-        <button class="btn btn-ifood-modal btn-lg btn-block" onclick="redirectToIfood()">
-          <span>Pedir no iFood 🛵</span>
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- Info Modal (Privacidade / Termos) -->
   <div class="modal-overlay" id="modalPrivacidade">
