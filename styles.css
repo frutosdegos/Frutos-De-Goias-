@@ -2988,3 +2988,726 @@ img {
 .mini-ifood-btn:hover {
   background: #cc1825 !important;
 }
+
+
+
+/* ==========================================================================
+   OTIMIZAÇÕES DE RESPONSIVIDADE MOBILE & TABLET
+   Preserva 100% da integridade visual no Computador (Desktop)
+   ========================================================================== */
+
+/* Prevenção global de transbordamento horizontal */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  /* Contêiner geral em telas menores */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Barra superior compacta e centralizada */
+  .top-bar {
+    padding: 6px 0;
+    font-size: 0.78rem;
+  }
+
+  .top-bar-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .top-bar-left {
+    justify-content: center;
+    font-size: 0.76rem;
+    gap: 6px;
+  }
+
+  .top-bar-right {
+    justify-content: center;
+    gap: 12px;
+    font-size: 0.76rem;
+  }
+
+  .unit-selector-wrapper {
+    padding: 2px 8px;
+    font-size: 0.75rem;
+  }
+
+  .unit-select {
+    font-size: 0.75rem;
+  }
+
+  .top-social-link {
+    font-size: 0.75rem;
+  }
+
+  /* Header mobile harmonioso e sem quebras */
+  .header-container {
+    height: 64px;
+    padding: 0 14px;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    gap: 8px;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .logo-mark {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-tagline {
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 175px;
+    letter-spacing: 0.02em;
+  }
+
+  .header-actions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .icon-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mobile-menu-toggle {
+    width: 38px;
+    height: 38px;
+    padding: 7px;
+  }
+
+  .btn-ifood-header {
+    padding: 7px 13px !important;
+    font-size: 0.82rem !important;
+    gap: 6px !important;
+  }
+
+  .btn-ifood-header svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Menu Drawer Mobile */
+  .mobile-nav-panel {
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 16px 20px;
+  }
+
+  .mobile-nav-links {
+    gap: 8px;
+  }
+
+  .mobile-nav-links a {
+    padding: 11px 14px;
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-page);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Hero Section formatado para mobile */
+  .hero-section {
+    padding: 24px 0 40px;
+  }
+
+  .hero-container {
+    gap: 28px;
+  }
+
+  .hero-badge {
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .hero-description {
+    font-size: 0.94rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.96rem;
+  }
+
+  /* Faixa de destaques do Hero em 3 colunas compactas */
+  .hero-features-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding-top: 14px;
+  }
+
+  .hero-feature-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .feature-icon-circle {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+    margin: 0 auto;
+  }
+
+  .hero-feature-item strong {
+    font-size: 0.76rem;
+    line-height: 1.15;
+  }
+
+  .hero-feature-item small {
+    font-size: 0.68rem;
+    line-height: 1.1;
+    display: block;
+  }
+
+  /* Card visual do Hero */
+  .hero-card-composition {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .floating-hero-card {
+    border-radius: var(--radius-lg);
+  }
+
+  .floating-hero-img {
+    height: 200px;
+  }
+
+  .floating-card-body {
+    padding: 14px 16px 18px;
+  }
+
+  .floating-card-body h4 {
+    font-size: 1.1rem;
+  }
+
+  .floating-card-body p {
+    font-size: 0.82rem;
+    margin-bottom: 10px;
+  }
+
+  .floating-card-footer .price-tag {
+    font-size: 1.05rem;
+  }
+
+  /* Floating Pills seguras sem transbordar tela */
+  .floating-hero-pill {
+    padding: 6px 10px;
+    gap: 6px;
+    transform: scale(0.88);
+  }
+
+  .pill-cerrado {
+    top: -10px;
+    right: 0;
+  }
+
+  .pill-delivery {
+    bottom: -10px;
+    left: 0;
+  }
+
+  .pill-emoji {
+    font-size: 1.1rem;
+  }
+
+  .floating-hero-pill strong {
+    font-size: 0.74rem;
+  }
+
+  .floating-hero-pill small {
+    font-size: 0.65rem;
+  }
+
+  /* Banner de unidades rápidas */
+  .units-quick-banner {
+    padding: 16px 0;
+  }
+
+  .units-quick-grid {
+    gap: 12px;
+  }
+
+  .unit-quick-card {
+    padding: 14px;
+    gap: 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .unit-quick-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+
+  .unit-quick-info h4 {
+    font-size: 0.95rem;
+  }
+
+  .unit-quick-info p {
+    font-size: 0.78rem;
+  }
+
+  .unit-quick-status {
+    font-size: 0.74rem;
+  }
+
+  /* Títulos de Seção */
+  .section-header {
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.68rem;
+    line-height: 1.22;
+  }
+
+  .section-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-top: 6px;
+  }
+
+  .section-badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  /* Navegação Fixa de Categorias */
+  .sticky-category-nav-wrapper {
+    top: 64px;
+    padding: 8px 0;
+    margin-bottom: 20px;
+  }
+
+  .menu-search-bar {
+    margin: 0 0 10px 0;
+  }
+
+  .menu-search-bar input {
+    padding: 10px 40px 10px 42px;
+    font-size: 0.88rem;
+    height: 44px;
+  }
+
+  .tag-filters {
+    gap: 6px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 2px 4px 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tag-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-pill {
+    padding: 6px 12px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .category-tabs-container {
+    gap: 8px;
+    padding: 4px 2px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+
+  .category-tab {
+    padding: 8px 14px;
+    font-size: 0.84rem;
+    gap: 6px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  .cat-icon {
+    font-size: 1rem;
+  }
+
+  /* Cards de Produto */
+  .destaques-grid,
+  .menu-products-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .product-card {
+    border-radius: var(--radius-md);
+  }
+
+  .product-image-wrap {
+    height: clamp(180px, 52vw, 230px);
+  }
+
+  .product-content {
+    padding: 14px;
+  }
+
+  .product-category-tag {
+    font-size: 0.72rem;
+  }
+
+  .product-title {
+    font-size: 1.08rem;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  .product-desc {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
+  .product-card-footer {
+    padding-top: 10px;
+  }
+
+  .product-price small {
+    font-size: 0.7rem;
+  }
+
+  .product-price strong {
+    font-size: 1.22rem;
+  }
+
+  .product-card-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    top: 10px;
+    left: 10px;
+  }
+
+  /* Seção Sabores do Cerrado */
+  .section-cerrado {
+    padding: 36px 0;
+  }
+
+  .cerrado-banner-box {
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
+    gap: 22px;
+  }
+
+  .cerrado-title {
+    font-size: 1.6rem;
+    line-height: 1.22;
+    margin-bottom: 10px;
+  }
+
+  .cerrado-p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .cerrado-fruits-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .cerrado-fruit-chip {
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: var(--radius-sm);
+  }
+
+  .fruit-emoji {
+    font-size: 1.15rem;
+  }
+
+  .cerrado-fruit-chip strong {
+    font-size: 0.8rem;
+  }
+
+  .cerrado-fruit-chip small {
+    font-size: 0.68rem;
+  }
+
+  .cerrado-image-card {
+    border-radius: var(--radius-lg);
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Avaliações */
+  .reviews-grid {
+    gap: 14px;
+  }
+
+  .review-card {
+    padding: 18px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .review-stars {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .review-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .reviewer-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.82rem;
+  }
+
+  .reviewer-meta strong {
+    font-size: 0.86rem;
+  }
+
+  .reviewer-meta small {
+    font-size: 0.74rem;
+  }
+
+  /* Unidades */
+  .unidades-grid {
+    gap: 16px;
+  }
+
+  .unidade-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .unidade-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+
+  .unidade-nome {
+    font-size: 1.25rem;
+  }
+
+  .unidade-body {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .unidade-info-row {
+    gap: 10px;
+  }
+
+  .unidade-info-row strong {
+    font-size: 0.82rem;
+  }
+
+  .unidade-info-row p {
+    font-size: 0.84rem;
+  }
+
+  .unidade-actions {
+    gap: 8px;
+  }
+
+  .unidade-actions .btn {
+    padding: 10px 16px;
+    font-size: 0.88rem;
+  }
+
+  /* Rodapé */
+  .main-footer {
+    padding-top: 40px;
+  }
+
+  .footer-content {
+    gap: 28px;
+    padding-bottom: 30px;
+  }
+
+  .footer-col-title {
+    font-size: 0.96rem;
+    margin-bottom: 12px;
+  }
+
+  .footer-bio {
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+
+  .footer-links {
+    gap: 8px;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+  }
+
+  .footer-unidade-item strong {
+    font-size: 0.84rem;
+  }
+
+  .footer-unidade-item p {
+    font-size: 0.78rem;
+  }
+
+  .footer-bottom {
+    padding: 16px 0;
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom-inner {
+    gap: 8px;
+  }
+
+  /* Modais e Drawers */
+  .cart-drawer {
+    max-width: 100%;
+  }
+
+  .modal-box {
+    width: 94%;
+    margin: 10px auto;
+    max-height: 92vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .product-modal {
+    max-height: 92vh;
+  }
+
+  .product-modal-image-wrap {
+    height: 220px;
+  }
+
+  .product-modal-body {
+    padding: 18px 16px;
+  }
+
+  .modal-product-title {
+    font-size: 1.22rem;
+  }
+
+  .modal-footer {
+    padding: 12px 16px;
+  }
+
+  .btn-ifood-modal {
+    padding: 12px 18px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Telas Ultra-Compactas (ex: iPhone SE, celulares até 390px) */
+@media (max-width: 390px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .header-container {
+    padding: 0 10px;
+    height: 60px;
+  }
+
+  .brand-tagline {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 0.96rem;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-menu-toggle {
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+  }
+
+  .btn-ifood-header {
+    padding: 6px 10px !important;
+    font-size: 0.76rem !important;
+    gap: 4px !important;
+  }
+
+  .btn-ifood-header .cart-total-text {
+    font-size: 0.76rem !important;
+  }
+
+  .sticky-category-nav-wrapper {
+    top: 60px;
+  }
+
+  .hero-title {
+    font-size: 1.65rem;
+  }
+
+  .cerrado-fruits-list {
+    grid-template-columns: 1fr;
+  }
+}
